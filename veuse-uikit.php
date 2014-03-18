@@ -8,6 +8,8 @@ Version: 1.3
 Author: Andreas Wilthil
 Author URI: http://veuse.com
 License: GPL3
+GitHub Plugin URI: https://github.com/veuse/veuse-uikit
+GitHub Branch: master
 
 */
 
