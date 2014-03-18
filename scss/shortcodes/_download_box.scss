@@ -1,0 +1,22 @@
+.veuse-download-box {
+
+	@extend .clearfix;
+	
+	margin-bottom: 30px;
+	border-bottom: 1px dotted #ddd;
+	
+	h3,
+	h4 { 
+		display: inline-block; 
+		float: left;
+		margin-bottom: 10px;
+		}
+	a.veuse-button { 
+		float: right;
+		margin-bottom: 10px;
+		}
+	p { 
+		clear: both;
+	
+	}
+}

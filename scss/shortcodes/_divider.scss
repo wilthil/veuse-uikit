@@ -1,0 +1,39 @@
+.widget_veuse_divider_widget { margin-bottom: 10px !important;}
+
+.veuse-divider { 
+					
+	position: relative;
+	overflow-x: hidden;
+	line-height: 1;
+	min-height: 1px;
+	padding:0;
+	margin:0 0 20px;
+	width:100%;
+	
+	span {
+		
+		font-size: inherit !important;
+	
+		i { color: #252525;  margin-right: 10px; font-size: inherit !important;}
+	}
+}
+
+.veuse-divider:before {
+	content:'';
+	border-top:1px solid #eee;
+	width:100%;
+	position: absolute;
+	top:50%;
+	left:0;
+	height: 1px;
+	display: inline-block;
+}	
+.veuse-divider-right span  { padding: 4px 0 4px 6px; }
+.veuse-divider-center span {  padding: 4px 6px;}
+.veuse-divider-left span	{ padding:4px 6px 4px 0; }
+
+.veuse-divider-left { text-align: left;}
+.veuse-divider-center { text-align: center;}
+.veuse-divider-right { text-align: right;}
+
+.veuse-divider span { background: #fff; position: relative; display: inline-block; line-height: 1; }

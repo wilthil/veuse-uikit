@@ -1,0 +1,98 @@
+.veuse-list {
+	
+	
+	> ul {
+		
+		list-style: none !important;
+		margin: 0 0 20px;
+		padding: 0;
+	
+		li {
+			padding:2px 0;
+			
+			i { min-width: 20px; text-align: center;}
+		}
+	}
+	
+	> p { margin: 0 !important; height: 0 !important; }
+	
+	
+	/* List styles */
+	&.style-1 ul li { border-bottom: 1px dotted rgba(0,0,0,0.07); padding:6px 0; }
+	&.style-2 ul li { border: 1px solid rgba(0,0,0,0.07); border-bottom:none; padding:8px 10px; margin-bottom: -1px;
+		
+		&:last-child {  border-bottom: 1px solid rgba(0,0,0,0.07); }
+		&:hover { background: rgba(0,0,0,0.05); }
+		
+	 }
+	&.style-3 ul li { border: 1px solid rgba(0,0,0,0.07); padding:8px 10px; margin-bottom: 4px;
+	
+		&:hover { background: rgba(0,0,0,0.05); }
+	
+	 }
+	 
+	&.style-4 ul li { border: 1px solid rgba(0,0,0,0.07); padding:8px 10px; margin-bottom: 4px; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; background: rgba(0,0,0,0.03);
+	
+		&:hover { background: transparent; }
+	
+	 }
+	 
+	 
+	&.style-5 ul { border: 1px solid rgba(0,0,0,0.07); padding:15px 20px; 
+		li { padding:4px 0;
+			
+			&:before { margin-right:15px !important;}
+		}
+	 }
+	
+	
+	/* List direction */
+	&:vertical ul li { display: block;}
+	&.horisontal ul li { display: inline-block; margin-right: 10px; }
+	
+	/* Has icon ? */
+	&.icon-list ul li:before {
+			
+		display: inline-block;
+		font-family: FontAwesome;
+		margin-right: 6px;
+			
+	}
+	
+	
+	/* Color of icon */
+	&.silver ul li:before { color: $silver;}
+	&.lightblue ul li:before { color: $lightblue;}
+	&.orange ul li:before { color: $orange;}
+	&.yellow ul li:before { color: $yellow;}
+	&.green ul li:before { color: $green;}
+	&.blue ul li:before { color: $blue;}
+	&.chalk ul li:before { color: $chalk;}
+	&.red ul li:before { color: $red;}
+	&.pink ul li:before { color: $pink;}
+	&.purple ul li:before { color: $purple;}
+	&.magenta ul li:before { color: $magenta;}
+	&.lightgreen ul li:before { color: $lightgreen;}
+	&.forrestgreen ul li:before { color: $forrestgreen;}
+	&.darkblue ul li:before { color: $darkblue;}
+	&.blue ul li:before { color: $blue;}
+	&.darkbrown ul li:before { color: $darkbrown;}
+	&.brown ul li:before { color: $brown;}
+		
+	/* Type of icon */
+	&.angle-right ul li:before { content:'\f105'; }
+	&.angle-double-right ul li:before { content:'\f101'; }
+	&.circle-o ul li:before { content:'\f10c'; }
+	&.dot-circle-o ul li:before { content:'\f192'; }
+	&.arrow-circle-right ul li:before { content:'\f0a9'; }	
+	&.long-arrow-right ul li:before { content:'\f178'; }
+	&.chevron-right ul li:before { content:'\f054'; }	
+	&.chevron-circle-right ul li:before { content:'\f138'; }
+	&.arrow-right ul li:before { content:'\f061'; }	
+	&.check ul li:before { content:'\f00c'; }	
+	&.check-circle ul li:before { content:'\f058'; }	
+	
+	
+	
+	
+}

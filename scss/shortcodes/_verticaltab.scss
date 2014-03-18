@@ -1,0 +1,66 @@
+.widget_veuse_verticaltab_widget { margin-bottom: 20px !important;}
+
+.panel-grid-cell { 
+	
+	position: relative;
+	
+	
+	}
+	
+.verticaltab-navigation {
+	
+	float: left;
+	display: block;
+	list-style: none;
+	margin:0;
+	padding:0;
+	position: relative;
+	z-index: 1;
+	width:33%;
+	
+	li { 
+		display: block;
+		margin-right:-1px;
+		margin-bottom: -1px;
+		line-height: 1em;
+		padding:15px 15px;
+		background: #fafafa;
+		border:1px solid #e4e4e4;
+		font-weight: bold;
+		cursor: pointer;
+
+		
+		&.active { background: #fff; border-right:1px solid #fff;}
+		
+		&:first-child { @include border-radius(2px 0 0 0);}
+		&:last-child { @include border-radius(0 2px 0 0);}
+		
+		i {  min-width: 24px;}
+	}
+	
+}
+
+.widget_veuse_verticaltab_widget {
+	display: none;
+	position: static !important;
+	float:left;
+	width:67%;
+	
+	.veuse-verticaltab-title { 
+		
+		display: none;
+	}
+	
+	.veuse-verticaltab-content {
+		position: 	relative;
+		z-index: 0;
+		margin:0;
+		padding:15px 15px 0;
+		border:1px solid #e4e4e4;
+		
+		
+	}
+	
+	
+	
+}

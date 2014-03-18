@@ -1,0 +1,207 @@
+
+/* Button widget */
+
+.widget_veuse_button_widget {
+	
+	//padding-bottom: 10px;
+	
+	//.veuse-button { margin-top: 12px;}
+	
+}
+
+/* Buttons */
+
+a.veuse-button {
+	
+	/* Global styles here */
+	
+	display: inline-block;
+	line-height: 13px;
+	//background: #252525;
+	border:1px solid rgba(0,0,0,0.05);
+	color: #252525;
+	padding:12px 14px;
+	font-size: 13px;
+	margin-bottom: 20px;
+	@include border-radius(2px);
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 0.03em;
+	
+	
+	&.tiny {
+		
+		padding:4px 7px;
+		font-size: 11px;
+		color: #fff;
+	}
+	
+	&.small {
+		
+		padding:6px 10px;
+		font-size: 11px;
+		color: #fff;
+	}
+	&.medium {
+		
+		padding:12px 14px;
+		font-size: 13px;
+		color: #fff;
+	}
+	&.large {
+		
+		padding:18px 20px;
+		font-size: 15px;
+	}
+	
+	&.left { float: left;}
+	&.right { float: right;}
+	&.justify { width: 100%;}
+	
+	
+	/* Colors */
+	
+	
+}
+
+/* Buttons */
+//$color: #fff !default;
+//$button-bg: $primary-color;
+
+
+
+
+@mixin veuse-button-base() {
+	
+	position: relative;
+	text-decoration: none;
+	display: inline-block;
+	padding: 8px 12px;
+	margin-bottom: 20px;
+	text-align: center;
+	-webkit-transition: all .1s ease;
+	-moz-transition: all .1s ease;
+	-ms-transition: all .1s ease;
+	-o-transition: all .1s ease;
+	transition: all .1s ease;
+	
+}
+
+
+@mixin veuse-button-color($background, $color, $radius) {
+	
+	@include border-radius($radius);	
+	//@include box-shadow(0px 2px 0px darken($background, 10%));
+	
+	color: $color;
+	background: $background;
+	
+	&:hover {
+		background: lighten($background, 5%);
+		color:lighten($background, 40%);	
+	}
+	
+	&:active {
+	    @include box-shadow(0px 0px 0px darken($background,5%));
+	    position: relative;
+	    top: 2px;
+	}
+
+}
+
+a.veuse-button {
+	
+	@include veuse-button-base();
+	@include veuse-button-color($primary-color, $color:#fff, $radius:$buttonradius);
+	
+	
+	/* Sizes */
+	
+	&.button-small { 
+		font-size: 13px;
+		padding:6px 12px;
+		}	
+		
+	&.button-medium { 
+		font-size: 15px;
+		padding:9px 15px;
+		}
+	&.button-large {
+		font-size: 18px;
+		padding:14px 20px;
+		}
+	
+
+}
+
+	/* Colors */
+	
+.veuse-button.orange {
+		@include veuse-button-color($background: $orange, $color:#fff, $radius:$buttonradius);
+	}
+	
+.veuse-button.green {
+		@include veuse-button-color($background: $green, $color:#fff, $radius:$buttonradius);
+	}
+	
+.veuse-button.yellow {	
+		@include veuse-button-color($background: $yellow, $color:#fff, $radius:$buttonradius);
+	}
+	
+.veuse-button.blue {	
+		@include veuse-button-color($background: $blue, $color:#fff, $radius:$buttonradius);
+	}
+	
+.veuse-button.silver {	
+		@include veuse-button-color($background: $silver, $color:#252525, $radius:$buttonradius);
+	}
+
+.veuse-button.chalk {	
+		@include veuse-button-color($background: $chalk, $color:#fff, $radius:$buttonradius);
+	}
+	
+.veuse-button.black {	
+		@include veuse-button-color($background: $black, $color:#fff, $radius:$buttonradius);
+	}
+	
+.veuse-button.red {	
+		@include veuse-button-color($background: $red, $color:#fff, $radius:$buttonradius);
+	}
+.veuse-button.pink {	
+		@include veuse-button-color($background: $pink, $color:#fff, $radius:$buttonradius);
+	}
+.veuse-button.purple {	
+		@include veuse-button-color($background: $purple, $color:#fff, $radius:$buttonradius);
+	}
+	
+.veuse-button.grey {	
+		@include veuse-button-color($background: $grey, $color:#fff, $radius:$buttonradius);
+	}
+	
+.veuse-button.magenta {	
+		@include veuse-button-color($background: $magenta, $color:#fff, $radius:$buttonradius);
+	}
+	
+.veuse-button.lightgreen {	
+		@include veuse-button-color($background: $lightgreen, $color:#fff, $radius:$buttonradius);
+	}
+	
+.veuse-button.forrestgreen {	
+		@include veuse-button-color($background: $forrestgreen, $color:#fff, $radius:$buttonradius);
+	}
+	
+.veuse-button.darkblue {	
+		@include veuse-button-color($background: $darkblue, $color:#fff, $radius:$buttonradius);
+	}
+	
+.veuse-button.blue {	
+		@include veuse-button-color($background: $blue, $color:#fff, $radius:$buttonradius);
+	}
+
+.veuse-button.brown {	
+		@include veuse-button-color($background: $brown, $color:#fff, $radius:$buttonradius);
+	}
+.veuse-button.darkbrown {	
+		@include veuse-button-color($background: $darkbrown, $color:#fff, $radius:$buttonradius);
+	}

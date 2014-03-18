@@ -1,0 +1,154 @@
+.widget_veuse_alert_widget { padding-bottom: 10px; margin-bottom: 0; }
+
+.veuse-progressbar-wrapper {
+	
+	position: relative;
+	margin-top:10px;
+	margin-bottom:10px;
+	
+	.veuse-progressbar-title {
+	
+		text-transform: uppercase;
+		font-weight: 400;
+	
+	 }
+	.veuse-progressbar-tooltip { 
+		
+		position: absolute; 
+		top:-4px; 
+		margin-left: -18px; 
+		width:36px; 
+		text-align: center;  
+		background: #444; 
+		padding:4px 0px; 
+		color: #ccc; 
+		font-size:11px;
+		@include border-radius(2px);
+		
+		&:after {
+			
+			position: absolute;	
+			content:'';
+			width: 0;
+			height: 0;
+			border-left: 3px solid transparent;
+			border-right: 3px solid transparent;
+			border-top: 3px solid #444;
+			bottom:-3px;
+			left:50%;
+			margin-left: -3px;
+
+			
+		}
+	}
+	
+	.veuse-progressbar {
+	
+		display: block;
+		background: rgba(0,0,0,0.1);
+		padding: 0px;
+		margin-top:10px;
+		margin-bottom:10px;
+		
+		.meter { 
+			display:block; 
+			background: $blue; 
+			height: 10px;
+	
+			}
+			
+		&.orange .meter { background: $orange; }
+		&.green .meter { background: $green; }
+		&.yellow .meter { background: $yellow; }
+		&.lightblue .meter { background: $lightblue; }
+		&.silver .meter { background: $silver; }
+		&.black .meter { background: $black; }
+		&.red .meter { background: $red; }
+		&.pink .meter { background: $pink; }
+		&.purple .meter { background: $purple; }
+		&.magenta .meter { background: $magenta; }
+		&.lightgreen .meter { background: $lightgreen; }
+		&.forrestgreen .meter { background: $forrestgreen; }
+		&.darkblue .meter { background: $darkblue; }
+		&.darkbrown .meter { background: $darkbrown; }
+		&.brown .meter { background: $brown; }
+		&.blue .meter { background: $blue; }
+		&.grey .meter { background: $grey; }
+
+			
+		
+	}
+	
+	
+}
+
+
+/* Multiprogress */
+
+.veuse-multiprogress-wrapper { 
+	
+	@include clearfix();
+	margin:0 0 20px;
+	
+	padding-bottom: 2px;
+	background: rgba(0,0,0,0.1);
+
+	.veuse-multiprogress {
+		
+		float: left;
+		display: block;
+		
+		padding:6px 10px 6px 0;
+		margin-bottom: 0px;
+		position: relative;
+		text-align: center;
+		
+		border-bottom:2px solid #777;
+		
+		&:hover {border-bottom: 2px solid $yellow;}
+		
+		&:after {
+			
+				position: absolute;	
+				content:'';
+				width: 9px;
+				height: 9px;
+				bottom:-5px;
+				right:50%;
+				margin-right:-5px;
+				background: #fff;
+				border:2px solid #777;
+				@include border-radius(50%);
+	
+				
+				}
+		
+		@media only screen and (max-width:'786px'){
+			
+			width:100% !important;
+		}
+		
+		.veuse-multiprogress-title {	
+			 //color: #fff;
+			 font-weight: normal;
+			 text-transform: uppercase
+			 
+			 
+			 
+			 }
+		.veuse-multiprogress-percentage { 
+			
+			//color: #252525; 
+			font-size: 11px;
+			float: right;
+			position: relative;
+			
+			
+			
+		}
+		
+		
+
+		
+	}
+}

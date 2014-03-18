@@ -1,0 +1,53 @@
+
+.widget_veuse_alert_widget { margin-bottom: 0 !important;}
+
+.veuse-alert {
+	
+	border:1px solid #eee;
+	background: #fafafa;
+	@include border-radius(2px);
+	padding:0.7em 1em;
+	margin: 0 0 10px 0;
+	line-height: 1.4em;
+	
+	p:last-child { margin-bottom: 0; }
+	
+	i { margin-right: 8px;}
+	
+	&.veuse-alert-white {
+	    background: #fff;
+	    border: 1px solid #dfdfdf;
+	    color: #505050;
+	}
+	
+	&.veuse-alert-red {
+	    background: #ffe6e3;
+	    border: 1px solid #f2c3bf;
+	    color: #bf210e;
+	}
+	
+	&.veuse-alert-yellow {
+	    background: #fff7d6;
+	    border: 1px solid #e9d477;
+	    color: #956433;
+	}
+	
+	&.veuse-alert-green {
+	    background: #edfdd3;
+	    border: 1px solid #c4dba0;
+	    color: #657e3c;
+	}
+		
+	&.veuse-alert-grey {
+	    background: #fbfbfb;
+	    border: 1px solid #dfdfdf;
+	    color: #373737;
+	}
+	
+	&.veuse-alert-blue {
+	    background: #e8ecf4;
+	    border: 1px solid #b3c0dd;
+	    color: #6b768e;
+	}
+	
+}

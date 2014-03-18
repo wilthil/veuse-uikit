@@ -1,0 +1,616 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Veuse Posttypes Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-06 08:14+0100\n"
+"PO-Revision-Date: 2014-02-06 08:28+0100\n"
+"Last-Translator: Andreas Wilthil <andreas@siteman.no>\n"
+"Language-Team: Veuse <andreas.wilthil@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Bookmarks: 1,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../shortcodes.php:13
+msgid "Download"
+msgstr "Last ned"
+
+#: ../shortcodes.php:582
+msgid "Name"
+msgstr "Navn"
+
+#: ../shortcodes.php:583
+msgid "Email"
+msgstr "E-post"
+
+#: ../shortcodes.php:584
+msgid "Message"
+msgstr "Melding"
+
+#: ../shortcodes.php:586
+msgid "Send Message"
+msgstr "Send melding"
+
+#: ../shortcodes.php:600
+msgid "Thank you for contacting us"
+msgstr "Takk for at du kontaktet oss"
+
+#: ../shortcodes.php:600
+msgid "Your email was successfully sent and we will be in touch with you soon."
+msgstr "Din e-post ble sendt. Vi vil ta kontakt snart."
+
+#: ../views/front/loop-postslider.php:24
+msgid "More"
+msgstr "Mer"
+
+#: ../widgets/alert-widget.php:11
+msgid "Alert"
+msgstr "Notis"
+
+#: ../widgets/alert-widget.php:12
+msgid "Add an alert notice"
+msgstr "Legg til et notis-felt."
+
+#: ../widgets/alert-widget.php:57 ../widgets/tab-widget.php:64
+#: ../widgets/toggle-widget.php:63 ../widgets/verticaltab-widget.php:64
+msgid "Toggle title:"
+msgstr "Tittel på toggle:"
+
+#: ../widgets/alert-widget.php:64 ../widgets/alert-widget.php:68
+#: ../widgets/button-widget.php:75 ../widgets/callout-widget.php:124
+#: ../widgets/divider-widget.php:90 ../widgets/iconbox-widget.php:87
+#: ../widgets/tab-widget.php:73 ../widgets/toggle-widget.php:72
+#: ../widgets/verticaltab-widget.php:73
+msgid "Icon:"
+msgstr "Ikon:"
+
+#: ../widgets/alert-widget.php:72 ../widgets/button-widget.php:81
+#: ../widgets/callout-widget.php:94 ../widgets/iconbox-widget.php:107
+msgid "White"
+msgstr "Hvit"
+
+#: ../widgets/alert-widget.php:73 ../widgets/button-widget.php:82
+#: ../widgets/progressbar-widget.php:73
+msgid "Red"
+msgstr "Rød"
+
+#: ../widgets/alert-widget.php:74 ../widgets/button-widget.php:83
+#: ../widgets/callout-widget.php:97 ../widgets/iconbox-widget.php:113
+#: ../widgets/progressbar-widget.php:74
+msgid "Yellow"
+msgstr "Gul"
+
+#: ../widgets/alert-widget.php:75 ../widgets/button-widget.php:84
+#: ../widgets/callout-widget.php:96 ../widgets/iconbox-widget.php:112
+#: ../widgets/progressbar-widget.php:75
+msgid "Green"
+msgstr "Grønn"
+
+#: ../widgets/alert-widget.php:76 ../widgets/button-widget.php:85
+#: ../widgets/progressbar-widget.php:76
+msgid "Grey"
+msgstr "Grå"
+
+#: ../widgets/alert-widget.php:77 ../widgets/button-widget.php:86
+#: ../widgets/iconbox-widget.php:110 ../widgets/progressbar-widget.php:77
+msgid "Blue"
+msgstr "Blå"
+
+#: ../widgets/button-widget.php:11
+msgid "Button (Veuse)"
+msgstr "Knapp (Siteman)"
+
+#: ../widgets/button-widget.php:12
+msgid "Add a button"
+msgstr "Legg til en knapp"
+
+#: ../widgets/button-widget.php:63 ../widgets/button-widget.php:68
+#: ../widgets/callout-widget.php:80 ../widgets/iconbox-widget.php:94
+msgid "Button text:"
+msgstr "Tekst til knapp:"
+
+#: ../widgets/button-widget.php:79
+msgid "Button color:"
+msgstr "Farge"
+
+#: ../widgets/button-widget.php:92
+msgid "Button size:"
+msgstr "Størrelse"
+
+#: ../widgets/button-widget.php:94
+msgid "Small"
+msgstr "Liten"
+
+#: ../widgets/button-widget.php:95
+msgid "Medium"
+msgstr "Normal"
+
+#: ../widgets/button-widget.php:96
+msgid "Large"
+msgstr "Stor"
+
+#: ../widgets/button-widget.php:101 ../widgets/divider-widget.php:96
+msgid "Alignment:"
+msgstr "Oppstilling:"
+
+#: ../widgets/button-widget.php:103
+msgid "None"
+msgstr "Ingen"
+
+#: ../widgets/button-widget.php:104 ../widgets/divider-widget.php:98
+msgid "Left"
+msgstr "Venstre"
+
+#: ../widgets/button-widget.php:105 ../widgets/divider-widget.php:100
+msgid "Right"
+msgstr "Høyre"
+
+#: ../widgets/button-widget.php:106
+msgid "Justify"
+msgstr ""
+
+#: ../widgets/callout-widget.php:11
+msgid "Callout (Veuse)"
+msgstr "Callout (Siteman)"
+
+#: ../widgets/callout-widget.php:12
+msgid "Add a call-to-action block"
+msgstr "Sett inn en \"Call To Action\" blokk"
+
+#: ../widgets/callout-widget.php:74 ../widgets/iconbox-widget.php:82
+msgid "Text:"
+msgstr "Tekst:"
+
+#: ../widgets/callout-widget.php:85 ../widgets/iconbox-widget.php:99
+msgid "Button link:"
+msgstr "Lenke:"
+
+#: ../widgets/callout-widget.php:90 ../widgets/iconbox-widget.php:104
+msgid "Style:"
+msgstr "Stil"
+
+#: ../widgets/callout-widget.php:92 ../widgets/iconbox-widget.php:108
+msgid "Dark"
+msgstr "Mørk"
+
+#: ../widgets/callout-widget.php:93 ../widgets/iconbox-widget.php:109
+msgid "Silver"
+msgstr "Lysegrå"
+
+#: ../widgets/callout-widget.php:95 ../widgets/iconbox-widget.php:111
+#: ../widgets/progressbar-widget.php:72
+msgid "Light blue"
+msgstr "Lys blå"
+
+#: ../widgets/callout-widget.php:98 ../widgets/iconbox-widget.php:114
+msgid "Orange"
+msgstr "Oransje"
+
+#: ../widgets/callout-widget.php:99 ../widgets/iconbox-widget.php:115
+msgid "Transparent - dark text"
+msgstr "Transparent - mørk tekst"
+
+#: ../widgets/callout-widget.php:100 ../widgets/iconbox-widget.php:116
+msgid "Transparent - light text"
+msgstr "Transparent - lys tekst"
+
+#: ../widgets/callout-widget.php:105 ../widgets/iconbox-widget.php:121
+msgid "Bordercolor:"
+msgstr "Kantfarge"
+
+#: ../widgets/callout-widget.php:107 ../widgets/callout-widget.php:114
+#: ../widgets/callout-widget.php:120 ../widgets/iconbox-widget.php:123
+#: ../widgets/iconbox-widget.php:130 ../widgets/iconbox-widget.php:136
+msgid "Hex value (#000000)"
+msgstr "Hex-verdi (#000000)"
+
+#: ../widgets/callout-widget.php:112 ../widgets/iconbox-widget.php:128
+msgid "Backgroundcolor:"
+msgstr "Bakgrunnsfarge"
+
+#: ../widgets/callout-widget.php:118 ../widgets/iconbox-widget.php:134
+msgid "Text color:"
+msgstr "Tekstfarge:"
+
+#: ../widgets/callout-widget.php:126 ../widgets/iconbox-widget.php:89
+msgid ""
+"Font Awesome icon. Find icons here: <a href=\"http://fontawesome.io\" target="
+"\"blank\">http://fontawesome.io</a>"
+msgstr ""
+"Font Awesome ikoner. Se ikonene here: <a href=\"http://fontawesome.io\" "
+"target=\"blank\">http://fontawesome.io</a>"
+
+#: ../widgets/divider-widget.php:11
+msgid "Divider (Veuse)"
+msgstr "Skillelinje (Siteman)"
+
+#: ../widgets/divider-widget.php:12
+msgid "Add a divider line, with or without text."
+msgstr "Legg inn skillelinje. Støtter også tekst og ikoner."
+
+#: ../widgets/divider-widget.php:72
+msgid "left"
+msgstr "venstre"
+
+#: ../widgets/divider-widget.php:79
+msgid "h4"
+msgstr "Tittel 4"
+
+#: ../widgets/divider-widget.php:85 ../widgets/editor-widget.php:82
+#: ../widgets/iconbox-widget.php:77 ../widgets/image-widget-2.php:74
+#: ../widgets/image-widget.php:20 ../widgets/page-widget.php:118
+#: ../widgets/posts-grid-widget.php:72 ../widgets/posts-widget.php:69
+#: ../widgets/postslider-widget.php:69 ../widgets/progressbar-widget.php:57
+#: ../widgets/testimonial-widget.php:62
+msgid "Title:"
+msgstr "Tittel:"
+
+#: ../widgets/divider-widget.php:99
+msgid "Center"
+msgstr "Midtstilt"
+
+#: ../widgets/divider-widget.php:106
+msgid "Text style:"
+msgstr "Tekststil"
+
+#: ../widgets/divider-widget.php:108
+msgid "Heading 3"
+msgstr "Tittel 3"
+
+#: ../widgets/divider-widget.php:109
+msgid "Heading 4"
+msgstr "Tittel 4"
+
+#: ../widgets/divider-widget.php:110
+msgid "Heading 5"
+msgstr "Tittel 45"
+
+#: ../widgets/divider-widget.php:111
+msgid "Heading 6"
+msgstr "Tittel 6"
+
+#: ../widgets/divider-widget.php:112
+msgid "Paragraph"
+msgstr "Avsnitt"
+
+#: ../widgets/editor-widget.php:21
+msgid "Arbitrary text or HTML with visual editor"
+msgstr ""
+
+#: ../widgets/editor-widget.php:23
+msgid "Editor (veuse)"
+msgstr "Teksteditor (Siteman)"
+
+#: ../widgets/editor-widget.php:85
+msgid "HTML"
+msgstr ""
+
+#: ../widgets/editor-widget.php:86
+msgid "Visual"
+msgstr "Visuell"
+
+#: ../widgets/iconbox-widget.php:11
+msgid "Icon-box (Veuse)"
+msgstr "Ikon-boks (Siteman)"
+
+#: ../widgets/iconbox-widget.php:12
+msgid "Add a styled box with a FontAwesome icon"
+msgstr "En stilisert boks med ikon fra fontawesome.io"
+
+#: ../widgets/iconbox-widget.php:65
+msgid "Enter text here"
+msgstr "Skriv tekst her"
+
+#: ../widgets/image-widget-2.php:11 ../widgets/image-widget.php:7
+msgid "Image (Veuse)"
+msgstr "Bilde (Siteman)"
+
+#: ../widgets/image-widget-2.php:12 ../widgets/image-widget.php:7
+msgid "Insert an image"
+msgstr "Sett inn bilde"
+
+#: ../widgets/page-widget.php:11
+msgid "Featured page (Veuse)"
+msgstr "Fremhevet side (Siteman)"
+
+#: ../widgets/page-widget.php:12
+msgid "Extract content from another page and insert on your page."
+msgstr "Hent innhold fra andre sider, og sett inn på siden."
+
+#: ../widgets/page-widget.php:80
+msgid "Read more"
+msgstr "Les mer"
+
+#: ../widgets/page-widget.php:123
+msgid "Select page:"
+msgstr "Velg side:"
+
+#: ../widgets/page-widget.php:154
+msgid "Image size:"
+msgstr "Bildestørrelse:"
+
+#: ../widgets/page-widget.php:156
+msgid "Original image:"
+msgstr "Originalbilde"
+
+#: ../widgets/page-widget.php:164
+msgid "Custom size:"
+msgstr "Bildestørrelse:"
+
+#: ../widgets/page-widget.php:166
+msgid "width * height"
+msgstr "bredde x høyde"
+
+#: ../widgets/page-widget.php:170
+msgid "Link"
+msgstr "Lenke"
+
+#: ../widgets/page-widget.php:171
+msgid "Add a link to the page"
+msgstr "Lenke til siden"
+
+#: ../widgets/page-widget.php:177
+msgid "Featured image"
+msgstr "Fremhevet bilde"
+
+#: ../widgets/page-widget.php:178
+msgid "Display the pages featured image."
+msgstr "Vis sidens fremhevede bilde"
+
+#: ../widgets/page-widget.php:184
+msgid "Button text"
+msgstr "Knapp farge"
+
+#: ../widgets/page-widget.php:185
+msgid "Text to show in button"
+msgstr "Tekst å vise i knappen"
+
+#: ../widgets/posts-grid-widget.php:12 ../widgets/posts-widget.php:12
+msgid "Display blog posts in a list."
+msgstr "Vis blogginnlegg i en opplisting"
+
+#: ../widgets/posts-grid-widget.php:62 ../widgets/posts-widget.php:60
+#: ../widgets/postslider-widget.php:60
+msgid "-1"
+msgstr ""
+
+#: ../widgets/posts-grid-widget.php:63 ../widgets/posts-widget.php:61
+#: ../widgets/postslider-widget.php:61
+msgid "date"
+msgstr "dato"
+
+#: ../widgets/posts-grid-widget.php:64 ../widgets/posts-widget.php:62
+#: ../widgets/postslider-widget.php:62
+msgid "ASC"
+msgstr ""
+
+#: ../widgets/posts-grid-widget.php:104 ../widgets/posts-widget.php:101
+#: ../widgets/postslider-widget.php:101
+msgid "Select categories:"
+msgstr "Velg kategorier:"
+
+#: ../widgets/posts-grid-widget.php:129
+msgid "Grid:"
+msgstr "Kolonner:"
+
+#: ../widgets/posts-grid-widget.php:131
+msgid "1 column"
+msgstr "1 kolonne"
+
+#: ../widgets/posts-grid-widget.php:132
+msgid "2 columns"
+msgstr "2 kolonner"
+
+#: ../widgets/posts-grid-widget.php:133
+msgid "3 columns"
+msgstr "3 kolonner"
+
+#: ../widgets/posts-grid-widget.php:134
+msgid "4 columns"
+msgstr "4 kolonner"
+
+#: ../widgets/posts-grid-widget.php:139 ../widgets/posts-widget.php:128
+#: ../widgets/postslider-widget.php:128
+msgid "Order by:"
+msgstr "Sorter etter"
+
+#: ../widgets/posts-grid-widget.php:143 ../widgets/posts-widget.php:132
+#: ../widgets/postslider-widget.php:132
+msgid "Post title"
+msgstr "Innlegg tittel"
+
+#: ../widgets/posts-grid-widget.php:144 ../widgets/posts-widget.php:133
+#: ../widgets/postslider-widget.php:133
+msgid "Post date"
+msgstr "Innleggets publiseringsdato"
+
+#: ../widgets/posts-grid-widget.php:151 ../widgets/posts-widget.php:140
+#: ../widgets/postslider-widget.php:140
+msgid "Order:"
+msgstr "Sortering"
+
+#: ../widgets/posts-grid-widget.php:155 ../widgets/posts-widget.php:144
+#: ../widgets/postslider-widget.php:144
+msgid "Ascending"
+msgstr "Økende"
+
+#: ../widgets/posts-grid-widget.php:156 ../widgets/posts-widget.php:145
+#: ../widgets/postslider-widget.php:145
+msgid "Descending"
+msgstr "Synkende"
+
+#: ../widgets/posts-grid-widget.php:163 ../widgets/posts-widget.php:152
+#: ../widgets/postslider-widget.php:152
+msgid "Per page:"
+msgstr "Per side:"
+
+#: ../widgets/posts-grid-widget.php:165 ../widgets/posts-widget.php:154
+#: ../widgets/postslider-widget.php:154
+msgid "To show all, enter -1"
+msgstr "For å vise alle, skriv -1"
+
+#: ../widgets/posts-grid-widget.php:170 ../widgets/posts-widget.php:159
+#: ../widgets/postslider-widget.php:159
+msgid "Image width:"
+msgstr "Bildebredde:"
+
+#: ../widgets/posts-grid-widget.php:172 ../widgets/posts-grid-widget.php:177
+#: ../widgets/posts-widget.php:161 ../widgets/posts-widget.php:166
+#: ../widgets/postslider-widget.php:161 ../widgets/postslider-widget.php:166
+msgid "Numeric value"
+msgstr "Tallverdi"
+
+#: ../widgets/posts-grid-widget.php:175 ../widgets/posts-widget.php:164
+#: ../widgets/postslider-widget.php:164
+msgid "Image height:"
+msgstr "Bildehøyde:"
+
+#: ../widgets/postslider-widget.php:12
+msgid "Display blog posts in a slider."
+msgstr "Vis blogginnlegg i en bildekarusell"
+
+#: ../widgets/progressbar-widget.php:11
+msgid "Progressbar"
+msgstr ""
+
+#: ../widgets/progressbar-widget.php:12
+msgid "Add a progressbar"
+msgstr ""
+
+#: ../widgets/progressbar-widget.php:64
+msgid "Width:"
+msgstr "Bredde:"
+
+#: ../widgets/progressbar-widget.php:68
+msgid "Color:"
+msgstr "Farge:"
+
+#: ../widgets/progressbar-widget.php:78
+msgid "Pink"
+msgstr "Rosa"
+
+#: ../widgets/progressbar-widget.php:79
+msgid "Purple"
+msgstr "Lilla"
+
+#: ../widgets/progressbar-widget.php:80
+msgid "Brown"
+msgstr "Brun"
+
+#: ../widgets/tab-widget.php:11
+msgid "Tab"
+msgstr "Fane (Siteman)"
+
+#: ../widgets/tab-widget.php:12
+msgid "Add a tabbed panel"
+msgstr "Legg til fane"
+
+#: ../widgets/tab-widget.php:69 ../widgets/toggle-widget.php:68
+#: ../widgets/verticaltab-widget.php:69
+msgid "Toggle content:"
+msgstr "Toggle innhold"
+
+#: ../widgets/testimonial-widget.php:11
+msgid "Testimonial"
+msgstr "Kundesitat"
+
+#: ../widgets/testimonial-widget.php:12
+msgid "Add a testimonial"
+msgstr "Legg til et kundesitat"
+
+#: ../widgets/testimonial-widget.php:67
+msgid "Testimonial:"
+msgstr "Kundesitat:"
+
+#: ../widgets/testimonial-widget.php:71
+msgid "Name:"
+msgstr "Navn:"
+
+#: ../widgets/testimonial-widget.php:75
+msgid "Designation:"
+msgstr "Stilling:"
+
+#: ../widgets/toggle-widget.php:11
+msgid "Toggle"
+msgstr "Toggle (Siteman)"
+
+#: ../widgets/toggle-widget.php:12
+msgid "Add a toggle button"
+msgstr "Legg til en toggle-knapp"
+
+#: ../widgets/verticaltab-widget.php:11
+msgid "Vertical tab"
+msgstr "Vertikal fane"
+
+#: ../widgets/verticaltab-widget.php:12
+msgid "Add a vertical tabbed panel"
+msgstr "Legg til vertikal fane"
+
+#~ msgid "Veuse Pagebuilder Widgets"
+#~ msgstr "Siteman Sidebygger Widgets"
+
+#~ msgid "Columns"
+#~ msgstr "Kolonner"
+
+#~ msgid "Pages"
+#~ msgstr "Sider"
+
+#~ msgid "Elements"
+#~ msgstr "Elementer"
+
+#~ msgid "Image size"
+#~ msgstr "Bildestørrelse"
+
+#~ msgid "Insert shortcode"
+#~ msgstr "Sett inn shortcode"
+
+#~ msgid "Settings for the featured-pages plugin."
+#~ msgstr "Innstillinger for Fremhevede sider plugin"
+
+#~ msgid "Enable plugin stylesheet"
+#~ msgstr "Last inn stilark"
+
+#~ msgid "Save Changes"
+#~ msgstr "Lagre endringer"
+
+#~ msgid "Settings"
+#~ msgstr "Innstillinger"
+
+#~ msgid "featured"
+#~ msgstr "fremhevet"
+
+#~ msgid "Phone:"
+#~ msgstr "Telefon"
+
+#~ msgid "Mobile:"
+#~ msgstr "Mobil"
+
+#~ msgid "Veuse Portfolio"
+#~ msgstr "Veuse Portefølje-plugin"
+
+#~ msgid "Portfolio"
+#~ msgstr "Porteflølje"
+
+#~ msgid "Project"
+#~ msgstr "Prosjekt"
+
+#~ msgid "Add New Project"
+#~ msgstr "Legg til prosjekt"
+
+#~ msgid "Edit Project"
+#~ msgstr "Endre prosjekt"
+
+#~ msgid "All Projects"
+#~ msgstr "Alle prosjekter"
+
+#~ msgid "New Project"
+#~ msgstr "Nytt prosjekt"
+
+#~ msgid "View Project"
+#~ msgstr "Vis prosjekt"
