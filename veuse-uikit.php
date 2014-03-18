@@ -4,7 +4,7 @@
 Plugin Name: Veuse UI Kit
 Plugin URI: http://veuse.com/plugins/ui-kit
 Description: A great collection of useful shortcodes and widgets for your theme.
-Version: 1.0
+Version: 1.3
 Author: Andreas Wilthil
 Author URI: http://veuse.com
 License: GPL3
