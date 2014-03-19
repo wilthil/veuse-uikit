@@ -67,6 +67,9 @@ class VeuseUikit {
 		require 'widgets/posts-widget.php';
 		require 'widgets/posts-grid-widget.php';
 		require 'widgets/progressbar-widget.php';
+		
+		/* Add theme support */
+		add_post_type_support('page', 'excerpt');
 				
 	}
 	
@@ -75,8 +78,8 @@ class VeuseUikit {
 	
 	function veuse_uikit_enqueue_styles() {
 
-		wp_register_style( 'veuse-uikit_css',  $this->pluginURI . 'assets/css/veuse-uikit.css', array(), '', 'screen' );
-		wp_enqueue_style ( 'veuse-uikit_css' );
+		wp_register_style( 'veuse-uikit-styles',  $this->pluginURI . 'assets/css/veuse-uikit.css', array(), '', 'screen' );
+		wp_enqueue_style ( 'veuse-uikit-styles' );
 		
 		wp_register_style( 'font-awesome',  $this->pluginURI  . 'assets/css/font-awesome.css', array(), '', 'all' );
 		wp_enqueue_style ( 'font-awesome' );
@@ -146,23 +149,26 @@ $uikit = new VeuseUikit;
 
 /* Find template part
 
-	Makes it possible to override the files with
-	a custom theme file.php
+Makes it possible to override the files with
+a custom theme file.php
+
+============================================ */
+
+function veuse_uikit_locate_part($file) {
 	
-	============================================ */
+	/* Check stylesheet directory */
 	
-	function veuse_uikit_locate_part($file) {
-		
-		/* Check stylesheet directory */
-		
-		if ( file_exists( get_stylesheet_directory().'/'. $file .'.php'))
-		   	$filepath = get_stylesheet_directory().'/'. $file .'.php';
-		
-		else
-			$filepath = 'views/front/'.$file.'.php';
-		
-		return $filepath;
-	}
+	if ( file_exists( get_stylesheet_directory().'/veuse-uikit/'. $file .'.php'))
+	   	$filepath = get_stylesheet_directory().'/veuse-uikit/'. $file .'.php';
+	
+	if ( file_exists( get_stylesheet_directory().'/'. $file .'.php'))
+	   	$filepath = get_stylesheet_directory().'/'. $file .'.php';
+	
+	else
+		$filepath = 'views/front/'.$file.'.php';
+	
+	return $filepath;
+}
 	
 /* Insert retina image */
 
@@ -437,4 +443,9 @@ if(!function_exists('mr_image_resize')){
 		}
     }
 }
+
+
+/* Enable excerpts for pages. Needed for the featured page shortcode */
+
+
 ?>

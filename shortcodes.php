@@ -22,68 +22,6 @@ function veuse_uikit_register_shortcodes(){
 	add_shortcode("veuse_alert", "veuse_alert");
 	
 	
-	/* Buttons */
-
-	if(!function_exists('veuse_button')){
-		function veuse_button( $atts, $content = null ) {
-			extract(shortcode_atts(array(
-					'href' => '#',
-					'text' => 'Button text',
-					'size' => 'small',
-					'color' => 'primary',
-					'style' => '',
-					'align' => '',
-					'target' => '',
-					'width' => '',
-					'icon' => '',
-					'bevel' => ''
-		    ), $atts));
-
-		    if($icon)
-		    $icon_str = '<i class="fa fa-'.$icon.'"></i>';
-		    else
-		    $icon_str = '';
-
-			if($bevel == true) $bevel = 'bevel'; else $bevel = '';
-
-		    if(is_numeric($href)){
-		    $btnurl = get_permalink($href);
-		    }else{
-		    $btnurl = $href;
-		    }
-			$out =  '<a href="'.$btnurl.'" class="veuse-button '.$size.' '.$align.' '.$color.' '.$style.' '.$bevel.'" target="'.$target.'">'.$icon_str.' '.$text.'</a>';
-
-			return $out;
-		}
-
-		add_shortcode('veuse_button', 'veuse_button');
-	}
-
-	
-	
-	/* Attachment download  */
-	
-	function veuse_download_box($atts, $content = null){
-		
-		extract(shortcode_atts(array(
-			'title' 		=> '',
-			'button_text'	=> __('Download','veuse-uikit'),
-			'link'			=> ''
-			
-			), $atts));
-			
-			
-			ob_start();
-			require(veuse_uikit_locate_part('download-box'));
-			$content = ob_get_contents();
-			ob_end_clean();
-					
-			return $content;
-
-	}
-	
-	add_shortcode("veuse_download_box", "veuse_download_box");
-	
 	/* Attachment download  */
 	
 	function veuse_download($atts, $content = null){
@@ -122,122 +60,113 @@ function veuse_uikit_register_shortcodes(){
 	add_shortcode("veuse_download", "veuse_download");
 	
 	
-	/* Styled lists  */
-	
-	function veuse_list($atts, $content = null){
-		
-		extract(shortcode_atts(array(
-			'title' 		=> '',
-			'icon'			=> '',
-			'style'			=> '',
-			'color'			=> '',
-			'direction'		=> 'vertical',
-			
-			
-			), $atts));
-			
-			if(!empty($icon)) $iconstr = 'icon-list '.$icon; else $iconstr = '';
-			
-			$out = '<div class="veuse-list '.$iconstr.' '.$color.' '.$direction.' style-'.$style.'">'.do_shortcode($content).'</div>';
-					
-			return $out;
+	/* Buttons */
 
+	if(!function_exists('veuse_button')){
+		function veuse_button( $atts, $content = null ) {
+			extract(shortcode_atts(array(
+					'href' => '#',
+					'text' => 'Button text',
+					'size' => 'small',
+					'color' => 'primary',
+					'style' => '',
+					'align' => '',
+					'target' => '',
+					'width' => '',
+					'icon' => '',
+					'bevel' => ''
+		    ), $atts));
+
+		    if($icon)
+		    $icon_str = '<i class="fa fa-'.$icon.'"></i>';
+		    else
+		    $icon_str = '';
+
+			if($bevel == true) $bevel = 'bevel'; else $bevel = '';
+
+		    if(is_numeric($href)){
+		    $btnurl = get_permalink($href);
+		    }else{
+		    $btnurl = $href;
+		    }
+			$out =  '<a href="'.$btnurl.'" class="veuse-button '.$size.' '.$align.' '.$color.' '.$style.' '.$bevel.'" target="'.$target.'">'.$icon_str.' '.$text.'</a>';
+
+			return $out;
+		}
+
+		add_shortcode('veuse_button', 'veuse_button');
 	}
 	
-	add_shortcode("veuse_list", "veuse_list");
 	
+		/* Call to action-block */
 	
-	/* Progress bar  */
+	if(!function_exists('veuse_callout')){
 	
-	function veuse_progressbar($atts, $content = null){
+		function veuse_callout( $atts, $content = null ) {
+			extract(shortcode_atts(array(
+					'caption' 		=> '',
+					'subcaption' 	=> '',
+					'link'			=> '',
+					'buttontext'	=> '',
+					'style'			=> '',
+					'color'			=> '',
+					'background'	=> '',
+					'bordercolor'	=> '',
+					'textcolor'		=> '',
+					'icon'			=> ''
+		    ), $atts));
+	    
+			if(!empty($link) && !empty($buttontext)) $contentbox = 'linked'; else $contentbox = '';
+	
 		
-		extract(shortcode_atts(array(
-			'title' 		=> '',
-			'color'			=> 'blue',
-			'width'			=> '75',
-			
-			
-			), $atts));
-			
+		
 			ob_start();
-			require(veuse_uikit_locate_part('progressbar'));
-			$out = ob_get_contents();
-			ob_end_clean();
-
-					
-			return $out;
-
-	}
-	
-	add_shortcode("veuse_progressbar", "veuse_progressbar");
-	
-	
-	/* Progress bar  */
-	
-	
-	/* Post slider */
-	
-	function veuse_postslider($atts, $content = null){
-		
-		extract(shortcode_atts(array(
-			'categories'	=> '',
-			'perpage'		=> '',
-			'order'			=> 'DESC',
-			'orderby'		=> 'title',
-			'width'			=> 'width',
-			'height'		=> 'height'
-			
-			), $atts));
-			
-			global $wp_query;
-		
-			query_posts(array(
-	        	'post_type' => 'post',
-	        	'showposts' => $perpage,
-	        	'order' => $order,
-	        	'orderby' 	=> $orderby,
-	        	'category_name' => $categories
-	        	)
-        	);
-			
-			ob_start();
-			require(veuse_uikit_locate_part('loop-postslider'));
-			$content = ob_get_contents();
+			require(veuse_uikit_locate_part('callout'));
+			$output = ob_get_contents();
 			ob_end_clean();
 		
-			return $content;
+			return $output;
+		
+		}
+
+		add_shortcode('veuse_callout', 'veuse_callout');
 
 	}
 	
-	add_shortcode("veuse_postslider", "veuse_postslider");
+	/* Divider */
 	
-	
-	/* Featured page */
-	
-	function veuse_parallax($atts, $content = null){
+	function veuse_divider($atts, $content = null){
 		
 		extract(shortcode_atts(array(
+			'icon' 		=> '',
+			'title'		=> '',
+			'textstyle'	=> 'h4',
+			'alignment'	=> 'left'
 			
-			'image'	 => '',
-			'content' => '',
-			'padding_top' => '70',
-			'padding_bottom' => '70',
+			), $atts));
 			
-		), $atts));
+			!empty($icon) ? $iconStr = '<i class="fa fa-'.$icon.'"></i>' :  $iconStr = '';
 			
-		
+			if(!empty($title) || !empty($icon)) { 
 				
-		ob_start();			
-		require(veuse_uikit_locate_part('parallax-section'));
-		$out = ob_get_contents();
-		ob_end_clean();
+				$wrapper_start = '<span>'; $wrapper_end = '</span>';
 				
-		return $out;
+			}  else {
+				
+				$wrapper_start = ''; $wrapper_end = '';
+				
+			}
+			
+			isset($title) ? $titleStr = $title :  $titleStr = '';
+		   
+		    $output = '<'.$textstyle.' class="veuse-divider veuse-divider-'.$alignment.'">'.$wrapper_start.$iconStr.''.$titleStr.$wrapper_end.'</'.$textstyle.'>';
+			
+			return $output;
 
 	}
 	
-	add_shortcode("veuse_parallax", "veuse_parallax");
-	
+	add_shortcode("veuse_divider", "veuse_divider");
+
 	
 	/* Featured page */
 	
@@ -245,11 +174,11 @@ function veuse_uikit_register_shortcodes(){
 		
 		extract(shortcode_atts(array(
 			'id'				=> '',
-			'imagesize'			=> '',
+			'imagesize'			=> 'medium',
 			'custom_imagesize' 	=> '',
-			'link'				=> 'link',
-			'button_text'		=> '',
-			'image'				=> 'image'
+			'link'				=> 'true',
+			'button_text'		=> __('Read more','veuse-uikit'),
+			'image'				=> 'true'
 			
 		), $atts));
 			
@@ -284,6 +213,157 @@ function veuse_uikit_register_shortcodes(){
 	}
 	
 	add_shortcode("veuse_page", "veuse_page");
+	
+	/* Attachment download  */
+	/*
+	function veuse_download_box($atts, $content = null){
+		
+		extract(shortcode_atts(array(
+			'title' 		=> '',
+			'button_text'	=> __('Download','veuse-uikit'),
+			'link'			=> ''
+			
+			), $atts));
+			
+			
+			ob_start();
+			require(veuse_uikit_locate_part('download-box'));
+			$content = ob_get_contents();
+			ob_end_clean();
+					
+			return $content;
+
+	}
+	
+	add_shortcode("veuse_download_box", "veuse_download_box");
+	*/
+	
+	
+	
+	
+	/* Styled lists  */
+	
+	function veuse_list($atts, $content = null){
+		
+		extract(shortcode_atts(array(
+			'title' 		=> '',
+			'icon'			=> '',
+			'style'			=> '',
+			'color'			=> '',
+			'direction'		=> 'vertical',
+			
+			
+			), $atts));
+			
+			if(!empty($icon)) $iconstr = 'icon-list '.$icon; else $iconstr = '';
+			
+			$out = '<div class="veuse-list '.$iconstr.' '.$color.' '.$direction.' style-'.$style.'">'.do_shortcode($content).'</div>';
+					
+			return $out;
+
+	}
+	
+	add_shortcode("veuse_list", "veuse_list");
+	
+	
+	/* Post slider */
+	
+	function veuse_postslider($atts, $content = null){
+		
+		extract(shortcode_atts(array(
+			'categories'	=> '',
+			'perpage'		=> '',
+			'order'			=> 'DESC',
+			'orderby'		=> 'title',
+			'width'			=> '600',
+			'height'		=> '300'
+			
+			), $atts));
+			
+			global $wp_query;
+		
+			query_posts(array(
+	        	'post_type' => 'post',
+	        	'showposts' => $perpage,
+	        	'order' => $order,
+	        	'orderby' 	=> $orderby,
+	        	'category_name' => $categories
+	        	)
+        	);
+			
+			ob_start();
+			require(veuse_uikit_locate_part('loop-postslider'));
+			$content = ob_get_contents();
+			ob_end_clean();
+		
+			return $content;
+
+	}
+	
+	add_shortcode("veuse_postslider", "veuse_postslider");
+	
+	
+	/* Progress bar  */
+	
+	function veuse_progressbar($atts, $content = null){
+		
+		extract(shortcode_atts(array(
+			'title' 		=> '',
+			'color'			=> 'blue',
+			'width'			=> '75',
+			
+			
+			), $atts));
+			
+			ob_start();
+			require(veuse_uikit_locate_part('progressbar'));
+			$out = ob_get_contents();
+			ob_end_clean();
+
+					
+			return $out;
+
+	}
+	
+	add_shortcode("veuse_progressbar", "veuse_progressbar");
+	
+	
+	/* Progress bar  */
+	
+	
+	
+	
+	
+	/* Parallax 
+	
+	Uncomplete. Needs more work...
+	
+	function veuse_parallax($atts, $content = null){
+		
+		extract(shortcode_atts(array(
+			
+			'image'	 => '',
+			'content' => '',
+			'padding_top' => '70',
+			'padding_bottom' => '70',
+			
+		), $atts));
+			
+		
+				
+		ob_start();			
+		require(veuse_uikit_locate_part('parallax-section'));
+		$out = ob_get_contents();
+		ob_end_clean();
+				
+		return $out;
+
+	}
+	
+	add_shortcode("veuse_parallax", "veuse_parallax");
+	*/
+	
+	
 	
 	/* Post list */
 	
@@ -487,39 +567,7 @@ function veuse_uikit_register_shortcodes(){
 	
 	
 
-	/* Divider */
 	
-	function veuse_divider($atts, $content = null){
-		
-		extract(shortcode_atts(array(
-			'icon' 		=> '',
-			'title'		=> '',
-			'textstyle'	=> 'h4',
-			'alignment'	=> 'left'
-			
-			), $atts));
-			
-			!empty($icon) ? $iconStr = '<i class="fa fa-'.$icon.'"></i>' :  $iconStr = '';
-			
-			if(!empty($title) || !empty($icon)) { 
-				
-				$wrapper_start = '<span>'; $wrapper_end = '</span>';
-				
-			}  else {
-				
-				$wrapper_start = ''; $wrapper_end = '';
-				
-			}
-			
-			isset($title) ? $titleStr = $title :  $titleStr = '';
-		   
-		    $output = '<'.$textstyle.' class="veuse-divider veuse-divider-'.$alignment.'">'.$wrapper_start.$iconStr.''.$titleStr.$wrapper_end.'</'.$textstyle.'>';
-			
-			return $output;
-
-	}
-	
-	add_shortcode("veuse_divider", "veuse_divider");
 	
 	
 	/* Iconbox */
@@ -578,102 +626,9 @@ function veuse_uikit_register_shortcodes(){
 
 	
 	
-	/* Call to action-block */
-	
-	if(!function_exists('veuse_callout')){
-	
-		function veuse_callout( $atts, $content = null ) {
-			extract(shortcode_atts(array(
-					'caption' 		=> '',
-					'subcaption' 	=> '',
-					'link'			=> '',
-					'buttontext'	=> '',
-					'style'			=> '',
-					'color'			=> '',
-					'background'	=> '',
-					'bordercolor'	=> '',
-					'textcolor'		=> '',
-					'icon'			=> ''
-		    ), $atts));
-	    
-	    if(!empty($link) && !empty($buttontext)) $contentbox = 'linked'; else $contentbox = '';
-	
-		
-		
-		ob_start();
-		require(veuse_uikit_locate_part('callout'));
-		$output = ob_get_contents();
-		ob_end_clean();
-	
-		return $output;
-	
-	}
-
-	add_shortcode('veuse_callout', 'veuse_callout');
-
-}
 
 
-/**********************************
- FORMS
-**********************************/
-if(!function_exists('ceon_forms')){
-function ceon_forms( $atts, $content = null ) {
-	extract(shortcode_atts(array(
-			'type' => '',
-			'emailaddress' => ''
-    ), $atts));
 
-
-	if($type == 'contact'){
-
-		return ceon_contact_form($emailaddress);
-	}
-
-
-}
-
-add_shortcode('form', 'ceon_forms');
-
-}
-
-
-/* INSERT CONTACT FORM
-**********************************/
-if(!function_exists('ceon_contact_form')){
-
-	function ceon_contact_form() {
-
-		$out = '';
-
-		$out.= '<form method="post" action="'.get_permalink().'" id="ceon_contactform">';
-		$out.= '<input type="text" size="50" name="contactname" id="contactname" value="" placeholder="'.__('Name','ceon').'" class="required" /></div>';
-		$out.= '<input type="text" size="50" name="email" id="email" value="" placeholder="'.__('Email','ceon').'" class="required email" /></div>';
-		$out.= '<textarea rows="5" cols="50" name="message" id="message" class="required" placeholder="'.__('Message','ceon').'"></textarea>';
-	    $out.= '<input type="hidden" value="sendt" name="action" />';
-	    $out.= '<input type="submit" class="button small primary" data-reveal-id="contact-receipt-modal" value="'.__('Send Message','ceon').'" name="submit" />';
-	    $out.= '</form>';
-
-    return $out;
-
-	}
-}
-
-
-if(!function_exists('veuse_contactform_receipt')){
-
-	function veuse_contactform_receipt(){
-
-			$out = '<div class="reveal-modal" id="contact-receipt-modal">';
-			$out.= '<h4>'.__('Thank you for contacting us','ceon').'</h4><p>'.__('Your email was successfully sent and we will be in touch with you soon.','ceon').'</p>';
-			$out.= '<a class="close-reveal-modal">&#215;</a></div>';
-
-			return $out;
-
-	}
-
-	add_action('wp_footer','veuse_contactform_receipt');
-}
 
 
 /* Google Maps Shortcode */
@@ -697,7 +652,7 @@ function veuse_searchform($atts, $content = null) {
    return get_search_form( false);
 }
 
-add_shortcode("searchform", "veuse_searchform");
+add_shortcode("veuse_searchform", "veuse_searchform");
 
 
 /* Shortcodes are listed alphabetically */
@@ -900,22 +855,22 @@ add_shortcode("searchform", "veuse_searchform");
 	/**********************************
 	 ROW
 	**********************************/
-	if(!function_exists('ceon_row')){
+	if(!function_exists('veuse_row')){
 
-		function ceon_row( $atts, $content = null ) {
+		function veuse_row( $atts, $content = null ) {
 
 		   return '<div class="row">'. do_shortcode($content). '</div>';
 		}
 
-		add_shortcode('row', 'ceon_row');
+		add_shortcode('veuse_row', 'veuse_row');
 	}
 
 	/**********************************
 	 COLUMS
 	**********************************/
-	if(!function_exists('ceon_column')){
+	if(!function_exists('veuse_column')){
 
-		function ceon_column( $atts, $content = null ) {
+		function veuse_column( $atts, $content = null ) {
 			extract(shortcode_atts(array(
 	        'small' => '',
 	        'large' => '',
@@ -924,12 +879,12 @@ add_shortcode("searchform", "veuse_searchform");
 		   return '<div class="small-'. $small.' large-' . $large . ' ' . $visibility . ' columns">'. wpautop( do_shortcode($content) ) . '</div>';
 		}
 
-		add_shortcode('column', 'ceon_column');
+		add_shortcode('veuse_column', 'veuse_column');
 	}
 
 
 
-/* Move to framework */
+	/* Move to framework */
 
 
 	if(!function_exists('veuse_section_container')){
