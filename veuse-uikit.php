@@ -12,12 +12,6 @@ GitHub Plugin URI: https://github.com/veuse/veuse-uikit
 */
 
 
-// Setup actions
-//add_action('init', array('VeuseUikit', 'init'));
-//add_action('admin_init', array('VeuseUikit', 'admin_init'));
-//add_action('plugins_loaded', array('VeuseUikit', 'plugins_loaded'));
-
-//add_action('widgets_init', array('VeuseUikit', 'widgets_init'));
 // Setup filters
 add_filter('wp_editor_widget_content', 'wptexturize');
 add_filter('wp_editor_widget_content', 'convert_smilies');
