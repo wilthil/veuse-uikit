@@ -24,5 +24,5 @@ Veuse Uikit has a myriad of useful shortcodes and widgets for your website. It i
 
 
 
-See wiki for full list of shortcodes and usage instructions
+See <a href="https://github.com/veuse/veuse-uikit/wiki">wiki</a> for full list of shortcodes and usage instructions
 
