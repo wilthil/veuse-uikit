@@ -1,10 +1,10 @@
 <?php 
 
-
 function veuse_uikit_register_shortcodes(){
-
 	
-	/* Alerts */
+	
+	/* Alerts
+	================================================  */
 
 	function veuse_alert($atts, $content = null){
 			
@@ -22,7 +22,9 @@ function veuse_uikit_register_shortcodes(){
 	add_shortcode("veuse_alert", "veuse_alert");
 	
 	
-	/* Attachment download  */
+	
+	/* Attachment download
+	================================================  */
 	
 	function veuse_download($atts, $content = null){
 		
@@ -60,7 +62,8 @@ function veuse_uikit_register_shortcodes(){
 	add_shortcode("veuse_download", "veuse_download");
 	
 	
-	/* Buttons */
+	/* Buttons 
+	================================================  */
 
 	if(!function_exists('veuse_button')){
 		function veuse_button( $atts, $content = null ) {
@@ -98,7 +101,8 @@ function veuse_uikit_register_shortcodes(){
 	}
 	
 	
-		/* Call to action-block */
+	/* Call to action-block 
+	================================================  */
 	
 	if(!function_exists('veuse_callout')){
 	
@@ -133,7 +137,8 @@ function veuse_uikit_register_shortcodes(){
 
 	}
 	
-	/* Divider */
+	/* Divider 
+	================================================  */
 	
 	function veuse_divider($atts, $content = null){
 		
@@ -168,7 +173,8 @@ function veuse_uikit_register_shortcodes(){
 	add_shortcode("veuse_divider", "veuse_divider");
 
 	
-	/* Featured page */
+	/* Featured page 
+	================================================  */
 	
 	function veuse_page($atts, $content = null){
 		
@@ -241,7 +247,8 @@ function veuse_uikit_register_shortcodes(){
 	
 	
 	
-	/* Styled lists  */
+	/* Styled lists  
+	================================================  */
 	
 	function veuse_list($atts, $content = null){
 		
@@ -266,7 +273,8 @@ function veuse_uikit_register_shortcodes(){
 	add_shortcode("veuse_list", "veuse_list");
 	
 	
-	/* Post slider */
+	/* Post slider 
+	================================================  */
 	
 	function veuse_postslider($atts, $content = null){
 		
@@ -303,7 +311,8 @@ function veuse_uikit_register_shortcodes(){
 	add_shortcode("veuse_postslider", "veuse_postslider");
 	
 	
-	/* Progress bar  */
+	/* Progress bar
+	================================================  */
 	
 	function veuse_progressbar($atts, $content = null){
 		
@@ -328,12 +337,7 @@ function veuse_uikit_register_shortcodes(){
 	add_shortcode("veuse_progressbar", "veuse_progressbar");
 	
 	
-	/* Progress bar  */
-	
-	
-	
-	
-	
+		
 	/* Parallax 
 	
 	Uncomplete. Needs more work...
@@ -365,7 +369,8 @@ function veuse_uikit_register_shortcodes(){
 	
 	
 	
-	/* Post list */
+	/* Post list 
+	================================================  */
 	
 	function veuse_postlist($atts, $content = null){
 		
@@ -401,7 +406,8 @@ function veuse_uikit_register_shortcodes(){
 	
 	add_shortcode("veuse_postlist", "veuse_postlist");
 	
-	/* Post list */
+	/* Post grid 
+	================================================  */
 	
 	function veuse_postgrid($atts, $content = null){
 		
@@ -439,7 +445,8 @@ function veuse_uikit_register_shortcodes(){
 	add_shortcode("veuse_postgrid", "veuse_postgrid");
 	
 	
-	/* Testimonial */
+	/* Testimonial 
+	================================================  */
 	
 	function veuse_testimonial($atts, $content = null){
 		
@@ -464,7 +471,9 @@ function veuse_uikit_register_shortcodes(){
 	
 	add_shortcode("veuse_testimonial", "veuse_testimonial");
 	
-	/* Accordion */
+	
+	/* Accordion 
+	================================================  */
 	
 	function veuse_accordion($atts, $content = null){
 				
@@ -482,9 +491,8 @@ function veuse_uikit_register_shortcodes(){
 	
 
 
-	/*-----------------------------------------------------------------------------------*/
-	/*	Toggle Shortcodes
-	/*-----------------------------------------------------------------------------------*/
+	/* Toggle 
+	================================================  */
 	
 	if (!function_exists('veuse_toggle')) {
 		function veuse_toggle( $atts, $content = null ) {
@@ -511,9 +519,8 @@ function veuse_uikit_register_shortcodes(){
 	}
 
 	
-	/*-----------------------------------------------------------------------------------*/
-	/*	Tab Shortcodes
-	/*-----------------------------------------------------------------------------------*/
+	/* Tab
+	================================================  */
 	
 	if (!function_exists('veuse_tab')) {
 		function veuse_tab( $atts, $content = null ) {
@@ -540,7 +547,8 @@ function veuse_uikit_register_shortcodes(){
 	}
 	
 
-	/*	Vertical Tab Shortcodes */
+	/*	Vertical Tab 
+	================================================  */
 	
 	if (!function_exists('veuse_verticaltab')) {
 		function veuse_verticaltab( $atts, $content = null ) {
@@ -565,12 +573,8 @@ function veuse_uikit_register_shortcodes(){
 	}
 
 	
-	
-
-	
-	
-	
-	/* Iconbox */
+	/* Iconbox 
+	================================================  */
 	
 	function veuse_iconbox($atts, $content = null){
 		
@@ -586,15 +590,13 @@ function veuse_uikit_register_shortcodes(){
 			'bordercolor'	=> ''
 			
 			), $atts));
-		   
 		    
-		    
-		    ob_start();
-		    require(veuse_uikit_locate_part('iconbox'));
-			$output = ob_get_contents();
-			ob_end_clean();
-			
-			return $output;		
+	    ob_start();
+	    require(veuse_uikit_locate_part('iconbox'));
+		$output = ob_get_contents();
+		ob_end_clean();
+		
+		return $output;		
 		
 	}
 	
@@ -602,10 +604,8 @@ function veuse_uikit_register_shortcodes(){
 	
 	
 
-	
-	
-
-	/* Responsive video */
+	/* Responsive video 
+	================================================  */
 
 	function veuse_responsive_video($atts, $content = null){
 		
@@ -622,37 +622,31 @@ function veuse_uikit_register_shortcodes(){
 	add_shortcode("veuse_video", "veuse_responsive_video");
 	
 	
+
+	/* Google Maps Shortcode 
+	================================================  */
 	
-
+	function veuse_googlemaps($atts, $content = null) {
+	   extract(shortcode_atts(array(
+	      "width" => '100%',
+	      "height" => '300',
+	      "src" => ''
+	   ), $atts));
+	   return '<iframe style="width:'.$width.';" height="'.$height.'" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="'.$src.'&amp;output=embed"></iframe>';
+	}
 	
+	add_shortcode("veuse_googlemap", "veuse_googlemaps");
+
+
+
+
+	/* Searchform */
+	function veuse_searchform($atts, $content = null) {
 	
-
-
-
-
-
-/* Google Maps Shortcode */
-
-function veuse_googlemaps($atts, $content = null) {
-   extract(shortcode_atts(array(
-      "width" => '100%',
-      "height" => '300',
-      "src" => ''
-   ), $atts));
-   return '<iframe style="width:'.$width.';" height="'.$height.'" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="'.$src.'&amp;output=embed"></iframe>';
-}
-add_shortcode("veuse_googlemap", "veuse_googlemaps");
-
-
-
-
-/* Searchform */
-function veuse_searchform($atts, $content = null) {
-
-   return get_search_form( false);
-}
-
-add_shortcode("veuse_searchform", "veuse_searchform");
+	   return get_search_form( false);
+	}
+	
+	add_shortcode("veuse_searchform", "veuse_searchform");
 
 
 /* Shortcodes are listed alphabetically */
