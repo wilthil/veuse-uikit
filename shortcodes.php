@@ -2,6 +2,63 @@
 
 
 function veuse_uikit_register_shortcodes(){
+
+	
+	/* Alerts */
+
+	function veuse_alert($atts, $content = null){
+			
+		extract(shortcode_atts(array(
+			'color' => '',
+			'icon' => ''
+	    ), $atts));
+	    
+	   !empty($icon) ? $icon_str = "<i class='fa fa-$icon'></i> " : $icon_str = "";
+
+	   return '<div data-alert class="veuse-alert veuse-alert-' . $color . '">' . $icon_str . do_shortcode( $content ) .  '</div>';
+		
+	}
+
+	add_shortcode("veuse_alert", "veuse_alert");
+	
+	
+	/* Buttons */
+
+	if(!function_exists('veuse_button')){
+		function veuse_button( $atts, $content = null ) {
+			extract(shortcode_atts(array(
+					'href' => '#',
+					'text' => 'Button text',
+					'size' => 'small',
+					'color' => 'primary',
+					'style' => '',
+					'align' => '',
+					'target' => '',
+					'width' => '',
+					'icon' => '',
+					'bevel' => ''
+		    ), $atts));
+
+		    if($icon)
+		    $icon_str = '<i class="fa fa-'.$icon.'"></i>';
+		    else
+		    $icon_str = '';
+
+			if($bevel == true) $bevel = 'bevel'; else $bevel = '';
+
+		    if(is_numeric($href)){
+		    $btnurl = get_permalink($href);
+		    }else{
+		    $btnurl = $href;
+		    }
+			$out =  '<a href="'.$btnurl.'" class="veuse-button '.$size.' '.$align.' '.$color.' '.$style.' '.$bevel.'" target="'.$target.'">'.$icon_str.' '.$text.'</a>';
+
+			return $out;
+		}
+
+		add_shortcode('veuse_button', 'veuse_button');
+	}
+
 	
 	
 	/* Attachment download  */
@@ -428,43 +485,7 @@ function veuse_uikit_register_shortcodes(){
 	}
 
 	
-	/* Buttons */
-
-	if(!function_exists('veuse_button')){
-		function veuse_button( $atts, $content = null ) {
-			extract(shortcode_atts(array(
-					'href' => '#',
-					'text' => 'Button text',
-					'size' => 'small',
-					'color' => 'primary',
-					'style' => '',
-					'align' => '',
-					'target' => '',
-					'width' => '',
-					'icon' => '',
-					'bevel' => ''
-		    ), $atts));
-
-		    if($icon)
-		    $icon_str = '<i class="fa fa-'.$icon.'"></i>';
-		    else
-		    $icon_str = '';
-
-			if($bevel == true) $bevel = 'bevel'; else $bevel = '';
-
-		    if(is_numeric($href)){
-		    $btnurl = get_permalink($href);
-		    }else{
-		    $btnurl = $href;
-		    }
-			$out =  '<a href="'.$btnurl.'" class="veuse-button '.$size.' '.$align.' '.$color.' '.$style.' '.$bevel.'" target="'.$target.'">'.$icon_str.' '.$text.'</a>';
-
-			return $out;
-		}
-
-		add_shortcode('veuse_button', 'veuse_button');
-	}
-
+	
 
 	/* Divider */
 	
@@ -553,22 +574,7 @@ function veuse_uikit_register_shortcodes(){
 	add_shortcode("veuse_video", "veuse_responsive_video");
 	
 	
-	/* Alerts */
-
-	function veuse_alert($atts, $content = null){
-			
-		extract(shortcode_atts(array(
-			'color' => '',
-			'icon' => ''
-	    ), $atts));
-	    
-	   !empty($icon) ? $icon_str = "<i class='fa fa-$icon'></i> " : $icon_str = "";
-
-	   return '<div data-alert class="veuse-alert veuse-alert-' . $color . '">' . $icon_str . do_shortcode( $content ) .  '</div>';
-		
-	}
-
-	add_shortcode("veuse_alert", "veuse_alert");
+	
 
 	
 	

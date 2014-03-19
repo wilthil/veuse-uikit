@@ -29,7 +29,10 @@
 	display: inline-block;
 }	
 .veuse-divider-right span  { padding: 4px 0 4px 6px; }
-.veuse-divider-center span {  padding: 4px 6px;}
+.veuse-divider-center span {  padding: 4px 6px; 
+	
+	i { margin-right:0;}
+}
 .veuse-divider-left span	{ padding:4px 6px 4px 0; }
 
 .veuse-divider-left { text-align: left;}

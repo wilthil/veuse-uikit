@@ -32,17 +32,30 @@
 .flexslider {
   margin: 0;
   padding: 0;
+  
+  
 }
+
+.flexslider * { box-sizing: border-box; list-style: none;}
+.flexslider a { text-decoration: none;}
 
 /* line 25, ../../sass/flexslider.scss */
 .flexslider .slides > li {
   display: none;
   -webkit-backface-visibility: hidden;
   position: relative;
+  margin:0;
+  padding: 0;
 }
 
-/* Hide the slides before the JS is loaded. Avoids image jumping */
-/* line 26, ../../sass/flexslider.scss */
+.flexslider ul.slides {
+	
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	
+}
+
 .flexslider .slides img {
   width: 100%;
   display: block;

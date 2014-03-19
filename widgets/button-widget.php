@@ -78,6 +78,7 @@ class VeuseButtonWidget extends WP_Widget {
 		<p>
 		<label for="<?php echo $this->get_field_id( 'button_color' ); ?>"><?php _e( 'Button color:' ); ?></label>
 		<select id="<?php echo $this->get_field_id( 'button_color' ); ?>" name="<?php echo $this->get_field_name( 'button_color' ); ?>">
+			<option value="default"  <?php selected( $button_color, '' , true); ?>><?php _e('Default','veuse-uikit');?></option>
 			<option value="white"  <?php selected( $button_color, 'white' , true); ?>><?php _e('White','veuse-uikit');?></option>
 			<option value="red"  <?php selected( $button_color, 'red' , true); ?>><?php _e('Red','veuse-uikit');?></option>
 			<option value="yellow"  <?php selected( $button_color, 'yellow' , true); ?>><?php _e('Yellow','veuse-uikit');?></option>
@@ -91,6 +92,7 @@ class VeuseButtonWidget extends WP_Widget {
 		<p>
 		<label for="<?php echo $this->get_field_id( 'button_size' ); ?>"><?php _e( 'Button size:' ); ?></label>
 		<select id="<?php echo $this->get_field_id( 'button_size' ); ?>" name="<?php echo $this->get_field_name( 'button_size' ); ?>">
+			<option value="tiny"  <?php selected( $button_size, 'tiny' , true); ?>><?php _e('Tiny','veuse-uikit');?></option>
 			<option value="small"  <?php selected( $button_size, 'small' , true); ?>><?php _e('Small','veuse-uikit');?></option>
 			<option value="medium"  <?php selected( $button_size, 'medium' , true); ?>><?php _e('Medium','veuse-uikit');?></option>
 			<option value="large"  <?php selected( $button_size, 'large' , true); ?>><?php _e('Large','veuse-uikit');?></option>

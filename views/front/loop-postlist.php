@@ -10,18 +10,17 @@ $fallback_img_url = get_stylesheet_directory_uri().'/images/fallback-featured.jp
 				<?php //echo veuse_retina_interchange_image( $img_url, $width, $height, true); ?>
 	<li <?php post_class();?>>
 	
-		<div class="veuse-postlist-meta">
-			<div class="veuse-postlist-entry-date">
-				<span class="day"><?php the_time('j');?></span>
-				<span class="month"><?php the_time('M');?></span>
-			</div>
-		</div>		
+	
 
 						
 		<h4><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
-						
-		<span class="veuse-postlist-entry-comments"><a href="<?php comments_link();?>"> <i class="fa fa-comments-o fa-lg"></i> <?php comments_number( '0', '1', '%' ); ?></a></span>
-										
+		<ul class="veuse-postlist-meta">
+		
+			<li><?php echo get_the_date();?></li>
+			<li><a href="<?php comments_link();?>"> <?php comments_number( '0 comments', '1 comment', '% comments' ); ?></a></li>
+		
+		</ul>
+													
 		<p><?php echo get_the_excerpt();?>
 		
 				

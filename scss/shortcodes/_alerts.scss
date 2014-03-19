@@ -3,6 +3,7 @@
 
 .veuse-alert {
 	
+	box-sizing: border-box;
 	border:1px solid #eee;
 	background: #fafafa;
 	@include border-radius(2px);
