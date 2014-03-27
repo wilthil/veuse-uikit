@@ -5,5 +5,5 @@
 	<?php } ?>
 	<?php echo $title; ?>
 	</span>
-	<div class="veuse-toggle-inner "><p><?php echo do_shortcode($content);?></p></div>
+	<div class="veuse-toggle-inner "><p><?php echo wpautop(do_shortcode($content));?></p></div>
 </div>

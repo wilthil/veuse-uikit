@@ -89,6 +89,7 @@ class VeuseCalloutWidget extends WP_Widget {
 		<p>
 			<label style="min-width:100px;" for="<?php echo $this->get_field_id('style');?>"><?php _e('Style:','veuse-pagelist');?></label>
 			<select name="<?php echo $this->get_field_name('style');?>">
+		  		<option value="default" <?php selected( $style, 'default' , true); ?>><?php _e('Default','veuse-pagelist');?></option>
 		  		<option value="dark" <?php selected( $style, 'dark' , true); ?>><?php _e('Dark','veuse-pagelist');?></option>
 		  		<option value="silver" <?php selected( $style, 'silver' , true); ?>><?php _e('Silver','veuse-pagelist');?></option>	
 		  		<option value="white" <?php selected( $style, 'white' , true); ?>><?php _e('White','veuse-pagelist');?></option>

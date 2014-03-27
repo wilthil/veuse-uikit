@@ -139,7 +139,11 @@ $uikit = new VeuseUikit;
 
 
 /* Include github updater */
-		require 'updater/github-updater.php';
+require 'updater/github-updater.php';
+
+/* Include documentation */
+//require 'documentation/documentation.php';
+
 
 /* Find template part
 
@@ -147,21 +151,22 @@ Makes it possible to override the files with
 a custom theme file.php
 
 ============================================ */
-
-function veuse_uikit_locate_part($file) {
-	
-	/* Check stylesheet directory */
-	
-	if ( file_exists( get_stylesheet_directory().'/veuse-uikit/'. $file .'.php'))
-	   	$filepath = get_stylesheet_directory().'/veuse-uikit/'. $file .'.php';
-	
-	if ( file_exists( get_stylesheet_directory().'/'. $file .'.php'))
-	   	$filepath = get_stylesheet_directory().'/'. $file .'.php';
-	
-	else
-		$filepath = 'views/front/'.$file.'.php';
-	
-	return $filepath;
+if(!function_exists('veuse_uikit_locate_part')){
+	function veuse_uikit_locate_part($file) {
+		
+		/* Check stylesheet directory */
+		
+		if ( file_exists( get_stylesheet_directory().'/veuse-uikit/'. $file .'.php'))
+		   	$filepath = get_stylesheet_directory().'/veuse-uikit/'. $file .'.php';
+		
+		if ( file_exists( get_stylesheet_directory().'/'. $file .'.php'))
+		   	$filepath = get_stylesheet_directory().'/'. $file .'.php';
+		
+		else
+			$filepath = 'views/front/'.$file.'.php';
+		
+		return $filepath;
+	}
 }
 	
 /* Insert retina image */
@@ -437,9 +442,4 @@ if(!function_exists('mr_image_resize')){
 		}
     }
 }
-
-
-/* Enable excerpts for pages. Needed for the featured page shortcode */
-
-
 ?>
