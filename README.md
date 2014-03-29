@@ -3,6 +3,9 @@ Veuse Uikit
 
 Veuse Uikit has a myriad of useful shortcodes and widgets for your website. It is especially made to be used with <a href="http://wordpress.org/plugins/siteorigin-panels/">Page Builder plugin</a> by SiteOrigin.
 
+###View demo: http://veuse.com/veuse-uikit
+
+
 <b>Included widgets and shortcodes</b>
 - Alerts
 - Buttons
