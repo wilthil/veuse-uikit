@@ -1,7 +1,7 @@
 <?php
 /*
 
-Plugin Name: Veuse UI Kit
+Plugin Name: Veuse Uikit
 Plugin URI: http://veuse.com/plugins/ui-kit
 Description: A great collection of useful shortcodes and widgets for your theme.
 Version: 1.0
@@ -31,7 +31,7 @@ class VeuseUikit {
 		$this->pluginURI  = plugin_dir_url(__FILE__) ;
 		$this->pluginPATH = plugin_dir_path(__FILE__) ;
 		
-		add_action('wp_enqueue_scripts', array(&$this,'veuse_uikit_enqueue_styles'), 100);
+		add_action('wp_enqueue_scripts', array(&$this,'veuse_uikit_enqueue_styles'), 0);
 		add_action('admin_enqueue_scripts', array(&$this,'veuse_uikit_enqueue_admin_script'));
 		add_action('plugins_loaded', array(&$this,'veuse_uikit_load_textdomain'));
 		
@@ -75,8 +75,8 @@ class VeuseUikit {
 		wp_register_style( 'veuse-uikit-styles',  $this->pluginURI . 'assets/css/veuse-uikit.css', array(), '', 'screen' );
 		wp_enqueue_style ( 'veuse-uikit-styles' );
 		
-		wp_register_style( 'font-awesome',  $this->pluginURI  . 'assets/css/font-awesome.css', array(), '', 'all' );
-		wp_enqueue_style ( 'font-awesome' );
+		//wp_register_style( 'font-awesome',  $this->pluginURI  . 'assets/css/font-awesome.css', array(), '', 'all' );
+		//wp_enqueue_style ( 'font-awesome' );
 		
 		wp_register_style( 'flexslider-css',  $this->pluginURI . 'assets/css/flexslider.css', array(), '', 'screen' );
 	    wp_enqueue_style ( 'flexslider-css' );

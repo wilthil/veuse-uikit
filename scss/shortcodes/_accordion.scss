@@ -8,7 +8,7 @@
 .veuse-toggle { 
 	margin: 0 0 4px 0; 
 	border: 1px solid #e4e4e4;
-	background: #fafafa;
+	background: #fff;
 	@include border-radius(2px);
 	
 	.veuse-toggle-title {
@@ -61,7 +61,7 @@
 	border-top: none;
 	display: none;
 	line-height: inherit;
-	
+	background: #fff;
 }
 
 

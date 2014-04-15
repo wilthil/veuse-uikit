@@ -16,15 +16,15 @@ a.veuse-button {
 	display: inline-block;
 	line-height: 13px;
 	//background: #252525;
-	border:1px solid rgba(0,0,0,0.05);
+	//border:1px solid rgba(0,0,0,0.05);
 	color: #252525;
 	padding:12px 14px;
 	font-size: 13px;
 	margin-bottom: 20px;
-	@include border-radius(2px);
+	//@include border-radius(2px);
 	text-decoration: none;
-	text-transform: uppercase;
-	font-weight: bold;
+	//text-transform: uppercase;
+	font-weight: 600;
 	letter-spacing: 0.03em;
 	
 	
@@ -88,7 +88,7 @@ a.veuse-button {
 
 @mixin veuse-button-color($background, $color, $radius) {
 	
-	@include border-radius($radius);	
+	//@include border-radius($radius);	
 	//@include box-shadow(0px 2px 0px darken($background, 10%));
 	
 	color: $color;

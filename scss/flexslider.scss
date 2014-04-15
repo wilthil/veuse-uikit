@@ -1,0 +1,282 @@
+/*
+ * jQuery FlexSlider v2.0
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ */
+/* Browser Resets */
+/* line 17, ../../sass/flexslider.scss */
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus {
+  outline: none;
+}
+
+/* line 20, ../../sass/flexslider.scss */
+.slides,
+.flex-control-nav,
+.flex-direction-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* FlexSlider Necessary Styles
+*********************************/
+/* line 24, ../../sass/flexslider.scss */
+.flexslider {
+  margin: 0;
+  padding: 0;
+  
+  
+}
+
+.flexslider * { box-sizing: border-box; list-style: none;}
+.flexslider a { text-decoration: none;}
+
+/* line 25, ../../sass/flexslider.scss */
+.flexslider .slides > li {
+  display: none;
+  -webkit-backface-visibility: hidden;
+  position: relative;
+  margin:0;
+  padding: 0;
+}
+
+.flexslider ul.slides {
+	
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	
+}
+
+.flexslider .slides img {
+  width: 100%;
+  display: block;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+
+/* line 32, ../../sass/flexslider.scss */
+.flex-pauseplay span {
+  text-transform: capitalize;
+}
+
+/* Clearfix for the .slides element */
+/* line 35, ../../sass/flexslider.scss */
+.slides:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+/* line 36, ../../sass/flexslider.scss */
+html[xmlns] .slides {
+  display: block;
+}
+
+/* line 37, ../../sass/flexslider.scss */
+* html .slides {
+  height: 1%;
+}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+/* line 42, ../../sass/flexslider.scss */
+.no-js .slides > li:first-child {
+  display: block;
+}
+
+/* Veuse Flexslider Default Theme
+*********************************/
+/* line 47, ../../sass/flexslider.scss */
+.flexslider {
+  margin: 0 !important;
+  padding: 0;
+  position: relative;
+  zoom: 1;
+}
+
+
+
+/* line 48, ../../sass/flexslider.scss */
+.flex-viewport {
+  max-height: 2000px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+/* line 49, ../../sass/flexslider.scss */
+.loading .flex-viewport {
+  max-height: 300px;
+}
+
+/* line 50, ../../sass/flexslider.scss */
+.flexslider .slides {
+  zoom: 1;
+}
+
+/* line 52, ../../sass/flexslider.scss */
+.carousel li {
+  margin: 0px;
+}
+
+/* Direction Nav */
+/* line 56, ../../sass/flexslider.scss */
+.flex-direction-nav {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  width: 100%;
+  margin: 0;
+}
+/* line 62, ../../sass/flexslider.scss */
+.flex-direction-nav li a {
+  width: 25px;
+  height: 30px;
+  margin: 0;
+  margin-top: -15px;
+  display: block;
+  background: #f9f9f9 url("../images/flex-nav.png") no-repeat 7px center;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  text-indent: -9999px;
+  opacity: 1;
+  -webkit-transition: all .3s ease;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  opacity: 0;
+}
+/* line 75, ../../sass/flexslider.scss */
+.flex-direction-nav li a.flex-next {
+  right: 0px;
+  margin-right: -4px;
+  background-position: -32px center;
+}
+/* line 76, ../../sass/flexslider.scss */
+.flex-direction-nav li a.flex-prev {
+  left: 0px;
+  margin-left: -4px;
+}
+
+/* Show direction nav on touch-screens */
+@media screen and (max-width: 768px) {
+  /* line 83, ../../sass/flexslider.scss */
+  .flex-direction-nav {
+    top: 30%;
+  }
+  /* line 85, ../../sass/flexslider.scss */
+  .flex-direction-nav li a {
+    opacity: 1;
+  }
+}
+/* line 89, ../../sass/flexslider.scss */
+.flexslider:hover .flex-next {
+  opacity: 1;
+}
+
+/* line 90, ../../sass/flexslider.scss */
+.flexslider:hover .flex-prev {
+  opacity: 1;
+}
+
+/* line 91, ../../sass/flexslider.scss */
+.flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover {
+  opacity: 1;
+}
+
+/* line 92, ../../sass/flexslider.scss */
+.flex-direction-nav .flex-disabled {
+  opacity: 0.3 !important;
+  filter: alpha(opacity=30);
+  cursor: default;
+}
+
+/* Control Nav */
+/* line 95, ../../sass/flexslider.scss */
+.flex-control-nav {
+  width: 100%;
+  position: absolute;
+  bottom: -40px;
+  text-align: center;
+}
+
+/* line 96, ../../sass/flexslider.scss */
+.flex-control-nav li {
+  margin: 0 6px;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+
+/* line 97, ../../sass/flexslider.scss */
+.flex-control-paging li a {
+  width: 11px;
+  height: 11px;
+  display: block;
+  background: #666;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  text-indent: -9999px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+/* line 98, ../../sass/flexslider.scss */
+.flex-control-paging li a:hover {
+  background: #333;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* line 99, ../../sass/flexslider.scss */
+.flex-control-paging li a.flex-active {
+  background: #000;
+  background: rgba(0, 0, 0, 0.9);
+  cursor: default;
+}
+
+/* line 102, ../../sass/flexslider.scss */
+.flex-control-thumbs {
+  margin: 5px 0 0;
+  position: static;
+  overflow: hidden;
+}
+/* line 107, ../../sass/flexslider.scss */
+.flex-control-thumbs li {
+  width: 25%;
+  float: left;
+  margin: 0;
+}
+/* line 108, ../../sass/flexslider.scss */
+.flex-control-thumbs img {
+  width: 100%;
+  display: block;
+  opacity: .7;
+  cursor: pointer;
+}
+/* line 109, ../../sass/flexslider.scss */
+.flex-control-thumbs img:hover {
+  opacity: 1;
+}
+/* line 110, ../../sass/flexslider.scss */
+.flex-control-thumbs .flex-active {
+  opacity: 1;
+  cursor: default;
+}
