@@ -1,0 +1,23 @@
+.counter {
+	
+	display: block;	
+	text-align: center;
+	padding: 30px 30px;
+	margin-bottom: 30px;
+	
+	border:1px solid #e4e4e4;
+	background: #fff;
+	@include border-radius(2px);
+	line-height: 1em;
+	
+	dt.caption { font-weight: bold; }
+	dt.description { font-weight: normal; }
+	
+	dd { 
+		margin: 0 0 6px;
+		line-height: 1em;
+		font-size: 60px;
+		
+	}
+	
+}

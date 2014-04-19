@@ -85,6 +85,8 @@ class VeuseUikit {
 		wp_enqueue_script('veuse_uikit_js', $this->pluginURI  . 'assets/js/veuse-uikit.js', array('jquery'), '', false);
 		
 		wp_enqueue_script('flexslider', $this->pluginURI . 'assets/js/jquery.flexslider-min.js', array('jquery'), '', true);
+		
+		//wp_enqueue_script('easypiechart', $this->pluginURI . 'assets/js/jquery.easypiechart.js', array('jquery'), '', true);
 
 	}
 	

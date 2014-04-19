@@ -46,25 +46,23 @@ $buttonradius:2px;
 @import "compass/css3/images";
 
 
-@import 'shortcodes/grid'; // Block grid
 
+@import 'shortcodes/accordion';
 @import 'shortcodes/alerts';
 @import 'shortcodes/buttons';
-@import 'shortcodes/pricingtable';
-@import 'shortcodes/testimonials';
-@import 'shortcodes/accordion';
-@import 'shortcodes/tab';
-@import 'shortcodes/verticaltab';
-@import 'shortcodes/divider';
 @import 'shortcodes/callout';
-@import 'shortcodes/iconbox';
-@import 'shortcodes/postlist';
-@import 'shortcodes/progressbar';
-@import 'shortcodes/lists';
+@import 'shortcodes/counter';
+@import 'shortcodes/divider';
 @import 'shortcodes/download_box';
-
-
-
+@import 'shortcodes/grid'; // Block grid
+@import 'shortcodes/iconbox';
+@import 'shortcodes/lists';
+@import 'shortcodes/postlist';
+@import 'shortcodes/pricingtable';
+@import 'shortcodes/progressbar';
+@import 'shortcodes/tab';
+@import 'shortcodes/testimonials';
+@import 'shortcodes/verticaltab';
 
 
 .widget_black-studio-tinymce {
@@ -114,3 +112,54 @@ $buttonradius:2px;
 	
 	.veuse-postslider-comments { float: right; }
 }
+
+
+/* Text highlights */
+mark { 
+	padding: 2px 2px; 
+	margin: 0 2px;
+	position: relative;
+	top:-1px;
+	
+	@include border-radius(2px);
+	
+}
+mark.dark { background: #404040; color: #fff;}
+mark.light{ background: #eee; color: #404040;}
+
+
+
+
+.chart {
+  position: relative;
+  display: block;
+  max-width:150px;
+  text-align: center;
+  
+  canvas {
+	 
+	 width:100% !important;
+	 height: 100% !important;
+		
+  }
+  
+  span {
+	  
+	  position: absolute;
+	  top:50%;
+	  left:0;
+	  width: 100%;
+	  font-size: 2em;
+	  margin-top:-1em;
+	  
+	  &.percent:after {
+		  content: '%';
+		  margin-left: 0.1em;
+		  font-size: 1em;
+		}
+  }
+}
+
+
+
+

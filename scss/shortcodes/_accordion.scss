@@ -20,16 +20,22 @@
 		position: relative;
 		font-weight: bold;
 		line-height: 1;
+		
+		
+		
 		i { 
 	      	position: absolute;
-	      	top:50%;
-	      	margin-top: -7px; 
+	      	top:50%;	
+	      	margin-top: -6px; 
 	      	left:20px;
 	  	}
       
+      
+	  	&.active { background: #fff;}
+	  	
 	  	.veuse-toggle-title:hover { border: 1px solid #c5c5c5; }
 	
-	  	&.veuse-toggle-icon { padding-left: 40px;}
+	  	&.veuse-toggle-icon { padding-left: 45px;}
 	  	
 	  	
 	  	&::after {
@@ -40,7 +46,7 @@
 			font-weight: 400 !important;
 			right: 15px;
 			top:50%;
-			margin-top: -9px;
+			margin-top: -7px;
 			font-size: 14px;
 		  	
 		  	
@@ -57,11 +63,13 @@
 	}
 }
 .veuse-toggle-inner {
-	padding: 2px 15px 15px 15px;
+	padding: 0px 15px 15px 15px;
 	border-top: none;
 	display: none;
 	line-height: inherit;
+	background: #fff;
 	
+	p:last-child { margin-bottom: 0;}
 }
 
 

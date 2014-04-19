@@ -51,14 +51,70 @@
 		padding: 0px;
 		margin-top:10px;
 		margin-bottom:10px;
+		@include border-radius(2px);
+		
 		
 		.meter { 
 			display:block; 
 			background: $blue; 
 			height: 10px;
+			@include border-radius(2px 0 0 2px);
+			
+			background-image:
+				-webkit-linear-gradient(
+				-45deg,
+				rgba(255, 255, 255, .1) 25%,
+				transparent 25%,
+				transparent 50%,
+				rgba(255, 255, 255, .1) 50%,
+				rgba(255, 255, 255, .1) 75%,
+				transparent 75%,
+				transparent
+			);
+			background-image:
+				-moz-linear-gradient(
+				-45deg,
+				rgba(0,0,0, .1) 25%,
+				transparent 25%,
+				transparent 50%,
+				rgba(255, 255, 255, .1) 50%,
+				rgba(255, 255, 255, .1) 75%,
+				transparent 75%,
+				transparent
+			);
+			background-image:
+				-ms-linear-gradient(
+				-45deg,
+				rgba(255, 255, 255, .1) 25%,
+				transparent 25%,
+				transparent 50%,
+				rgba(255, 255, 255, .1) 50%,
+				rgba(255, 255, 255, .1) 75%,
+				transparent 75%,
+				transparent
+			);
+			background-image:
+				linear-gradient(
+				-45deg,
+				rgba(255, 255, 255, .1) 25%,
+				transparent 25%,
+				transparent 50%,
+				rgba(255, 255, 255, .1) 50%,
+				rgba(255, 255, 255, .1) 75%,
+				transparent 75%,
+				transparent
+			);
+			-webkit-background-size:30px 30px;
+			-moz-background-size:30px 30px;
+			-ms-background-size:30px 30px;
+			background-size:30px 30px;
+			-webkit-animation:move 2s linear infinite;
+			-moz-animation:move 2s linear infinite;
+			-ms-animation:move 2s linear infinite;
+			animation:move 2s linear infinite;
 	
 			}
-			
+		/*	
 		&.orange .meter { background: $orange; }
 		&.green .meter { background: $green; }
 		&.yellow .meter { background: $yellow; }
@@ -77,12 +133,48 @@
 		&.blue .meter { background: $blue; }
 		&.grey .meter { background: $grey; }
 
-			
+		*/	
 		
 	}
 	
 	
 }
+
+/*
+Animate the stripes
+*/	
+@-webkit-keyframes move{
+  0% {
+  	background-position: 0 0;
+  }
+  100% {
+  	background-position: 30px 30px;
+  }
+}	
+@-moz-keyframes move{
+  0% {
+  	background-position: 0 0;
+  }
+  100% {
+  	background-position: 30px 30px;
+  }
+}	
+@-ms-keyframes move{
+  0% {
+  	background-position: 0 0;
+  }
+  100% {
+  	background-position: 30px 30px;
+  }
+}	
+@keyframes move{
+  0% {
+  	background-position: 0 0;
+  }
+  100% {
+  	background-position: 30px 30px;
+  }
+}	
 
 
 /* Multiprogress */

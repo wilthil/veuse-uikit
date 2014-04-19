@@ -136,6 +136,111 @@ function veuse_uikit_register_shortcodes(){
 		add_shortcode('veuse_callout', 'veuse_callout');
 
 	}
+
+	
+	/* Counter
+	================================================  */
+	
+	if(!function_exists('veuse_chart')){
+	
+		function veuse_chart( $atts, $content = null ) {
+			extract(shortcode_atts(array(
+					'percentage' 	=> '50',
+					'scale_color'	=> '#ccc',
+					'track_color'	=> '#fff',
+					'bar_color'		=> '#333'
+					
+		    ), $atts));
+	    
+			
+		
+
+			return '<div class="chart " data-percent="'.$percentage.'" data-bar-color="'.$bar_color.'" data-track-color="'.$track_color.'" data-scale-color="'.$scale_color.'"><span class="percent">'.$percentage.'<span></div>';
+			
+		
+		}
+
+		add_shortcode('veuse_chart', 'veuse_chart');
+
+	}
+
+	
+	
+	/* Counter
+	================================================  */
+	
+	if(!function_exists('veuse_counter')){
+	
+		function veuse_counter( $atts, $content = null ) {
+			extract(shortcode_atts(array(
+					'from' 			=> '0',
+					'to' 			=> '',
+					'speed'			=> '3000',
+					'color'			=> '',
+					'background'	=> '',
+					'caption'		=> '',
+					'description' 	=> '',
+					'prefix'		=> '',
+					'postfix'		=> ''
+					
+		    ), $atts));
+	    
+			
+		
+			ob_start();
+			require(veuse_uikit_locate_part('counter'));
+			$output = ob_get_contents();
+			ob_end_clean();
+		
+			return $output;
+		
+		}
+
+		add_shortcode('veuse_counter', 'veuse_counter');
+
+	}
+	
+	/* Gap
+	================================================  */
+	
+	if(!function_exists('veuse_gap')){
+	
+		function veuse_gap( $atts, $content = null ) {
+			extract(shortcode_atts(array(
+					'size' 		=> '30',
+					
+		    ), $atts));
+		    
+		   
+	    		
+			return '<br style="margin-bottom:'.$size.'px;" />';
+		
+		}
+
+		add_shortcode('veuse_gap', 'veuse_gap');
+
+	}
+	
+	/* Mark
+	================================================  */
+	
+	if(!function_exists('veuse_mark')){
+	
+		function veuse_mark( $atts, $content = null ) {
+			extract(shortcode_atts(array(
+					'type' => ''
+					
+		    ), $atts));
+		    
+		   
+	    		
+			return '<mark class="'.$type.'">'.$content.'</mark>';
+		
+		}
+
+		add_shortcode('veuse_mark', 'veuse_mark');
+
+	}
 	
 	/* Divider 
 	================================================  */
