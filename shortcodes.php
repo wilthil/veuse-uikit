@@ -3,6 +3,147 @@
 function veuse_uikit_register_shortcodes(){
 	
 	
+	/* Veuse Slider
+	================================================  */
+	
+	function veuse_slider( $atts, $content = null ) {
+
+		 extract(shortcode_atts(array(
+					'id' 			=> '',
+					'width' 		=> '1000',
+					'height' 		=> '500',
+					'autoheight' 	=> 'true',
+					'speed' 		=> 5000,
+					'slideshow'		=> true,
+					'animation' 	=> 'fade',
+					'controlnav' 	=> true,
+					'directionnav' 	=> true
+
+		 ), $atts));
+
+			ob_start();
+			require(veuse_uikit_locate_part('loop-slider'));
+			$content = ob_get_contents();
+			ob_end_clean();
+	
+			return $content;
+
+	}
+	
+	add_shortcode("veuse_slider", "veuse_slider");
+	
+	
+	/* Veuse Slider
+	================================================  */
+	if(!function_exists('veuse_pricetable')){
+		
+		function veuse_pricetable($atts, $content = null){
+
+		   extract(shortcode_atts(array(
+				'pricetable' 		=> ''
+			), $atts));
+			
+			
+			$args = array(
+			    'post_type' => 'priceitem',
+			    'post_status' => 'publish',
+			    'orderby'	=> 	'menu_order',
+			    'posts_per_page' => -1,
+			    'order' => 'ASC',
+			    'tax_query' => array(
+			 		array(
+			            'taxonomy' => 'pricetable',
+			            'field' => 'slug',
+			            'terms' => $pricetable
+			            )
+			         )
+			      );
+		
+			$priceitems = get_posts( $args );
+						
+			$count = count($priceitems);
+				
+			if($count > 0){
+				
+				$output = '';
+				$output .= '<div class="veuse-pricing-table-wrapper columns-'.$count.'">';
+				
+					foreach( $priceitems as $priceitem ) :	setup_postdata($priceitem);
+			
+						$title 		= $priceitem->post_title;
+						$excerpt 	= $priceitem->post_excerpt;
+						
+						$featured = get_post_meta($priceitem->ID,'veuse_priceitem_featured',true);
+						$ribbon_text = get_post_meta($priceitem->ID,'veuse_priceitem_ribbon_text',true);
+						$ribbon_color = get_post_meta($priceitem->ID,'veuse_priceitem_ribbon_color',true);
+						$price = get_post_meta($priceitem->ID,'veuse_priceitem_price',true);
+						$currency = get_post_meta($priceitem->ID,'veuse_priceitem_currency',true);
+						$period = get_post_meta($priceitem->ID,'veuse_priceitem_period',true);
+						$bullets = get_post_meta($priceitem->ID,'veuse_priceitem_bullets',true);
+						$button_href = get_post_meta($priceitem->ID,'veuse_priceitem_button_href',true);
+						$button_text = get_post_meta($priceitem->ID,'veuse_priceitem_button_text',true);
+						
+						if($featured == 'on') { $featured = 'featured-price'; }
+						
+						$bullets = explode(',', $bullets);
+					
+						$output .= '';
+						
+						$output .= '<ul class="veuse-pricing-table '.$featured.'">';
+						
+						if(!empty($ribbon_text) && !empty($ribbon_color)){
+							$output .= '<li class="ribbon ribbon-'.$ribbon_color.'"><div class="banner"><div class="text">'.$ribbon_text.'</div></div></li>';
+							}
+						if(!empty($title))
+						$output .= '<li class="title">'.$title.'</li>';
+						
+						$output .= '<li class="price">';
+						if(!empty($currency))
+						$output .= '<span class="currency">'.$currency.'</span>';
+						if(isset($price))
+						$output .= '<span class="price">'.$price.'</span>';
+						if(!empty($period))
+						$output .= '<span class="period">'.$period.'</span>';
+						$output .= '</li>';
+						  
+						if(!empty($excerpt))
+							$output .= '<li class="description">'.$excerpt.'</li>';
+						
+						foreach($bullets as $bullet){
+							
+							$output .= '<li class="bullet-item">'.$bullet.'</li>';
+							
+						} 		  
+					
+						$output .= '<li class="cta-button"><a class="veuse-button" href="'.$button_href.'">'.$button_text.'</a></li>';
+						$output .= '</ul>';
+						
+						
+					
+					endforeach;
+		
+				$output .= '</div>';
+				
+			}
+			
+					
+				
+			
+			
+			wp_reset_postdata();
+		
+			
+		  return $output;
+		}
+		
+		
+		
+		
+	}
+	
+	
+	add_shortcode('veuse_pricetable','veuse_pricetable');
+	
 	/* Alerts
 	================================================  */
 
@@ -20,6 +161,43 @@ function veuse_uikit_register_shortcodes(){
 	}
 
 	add_shortcode("veuse_alert", "veuse_alert");
+	
+	/* Carousel
+	================================================  */
+
+	function veuse_carousel($atts, $content = null){
+			
+		extract(shortcode_atts(array(
+			'type' => 'loop', // loop or single-posts
+			'post_type' => 'post',
+			'id'	=> '',	// List of id's, separated by commas
+			'categories' => '', // For loop carousels. Ids of categories. Comma separated
+			'postcount' => get_option('posts_per_page'), // For loop carousels. How many posts to display 
+			'order'		=> 'ASC',
+			'orderby'	=> 'date', // Date or title
+			'width' => '',	// Width of image
+			'height' => '',	// Height of image
+			'direction_arrows' => '',
+			'title'			=> true,
+			'excerpt'		=> false,
+			'desktop' 		=> '4',
+			'desktop_small' => '3',
+			'tablet'		=> '2',
+			'mobile'		=> '1'
+		), $atts));
+		
+		
+				
+		ob_start();
+		require(veuse_uikit_locate_part('carousel'));
+		$content = ob_get_contents();
+		ob_end_clean();
+				
+		return $content;
+
+	}
+
+	add_shortcode("veuse_carousel", "veuse_carousel");
 	
 	
 	
@@ -362,14 +540,16 @@ function veuse_uikit_register_shortcodes(){
 			'icon'			=> '',
 			'style'			=> '',
 			'color'			=> '',
-			'direction'		=> 'vertical',
-			
+			'border'		=> 'false',
+			'direction'		=> 'vertical',			
 			
 			), $atts));
 			
+			!empty($border) ? $borderclass="border" : $borderclass='';
+			
 			if(!empty($icon)) $iconstr = 'icon-list '.$icon; else $iconstr = '';
 			
-			$out = '<div class="veuse-list '.$iconstr.' '.$color.' '.$direction.' style-'.$style.'">'.do_shortcode($content).'</div>';
+			$out = '<div class="veuse-list '.$iconstr.' '.$color.' '.$direction.' '.$borderclass .' style-'.$style.'">'.do_shortcode($content).'</div>';
 					
 			return $out;
 

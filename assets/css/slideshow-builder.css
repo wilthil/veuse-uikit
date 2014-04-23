@@ -1,0 +1,68 @@
+.wp-media-buttons img { }
+
+.slide-item-image {
+  margin: 0;
+  background: #fff;
+  outline: 1px solid #eee;
+  min-height: 200px;
+  position: relative;
+}
+/* line 7, ../../sass/slideshow-builder.scss */
+.slide-item-image .add_slide_image,
+.slide-item-image .remove_slide_image {
+  display: none;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  text-align: center;
+  top: 50%;
+  margin-top: -6px;
+}
+
+.slide-item-image .add_slide_image { display: block;}
+
+.veuse_panel {
+  margin: 20px 10px;
+}
+
+.slide-item {
+  background: #fcfcfc;
+}
+
+.slide-item .inside {
+  padding: 20px;
+}
+
+.slide-item fieldset {
+  margin-bottom: 10px;
+}
+
+.slide-item figure {
+  margin-bottom: 10px;
+  width: 50%;
+  margin-right: 3%;
+  float: left;
+}
+/* line 20, ../../sass/slideshow-builder.scss */
+.slide-item img {
+  width: 100%;
+  display: block;
+}
+
+/* line 23, ../../sass/slideshow-builder.scss */
+.slide-item-form {
+  width: 47%;
+  margin-right: 0;
+  float: left;
+}
+/* line 28, ../../sass/slideshow-builder.scss */
+.slide-item-form input[type=text] {
+  width: 100%;
+}
+/* line 29, ../../sass/slideshow-builder.scss */
+.slide-item-form textarea {
+  width: 100%;
+  min-height: 90px;
+}
+
+

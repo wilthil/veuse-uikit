@@ -35,36 +35,112 @@ class VeuseUikit {
 		add_action('admin_enqueue_scripts', array(&$this,'veuse_uikit_enqueue_admin_script'));
 		add_action('plugins_loaded', array(&$this,'veuse_uikit_load_textdomain'));
 		
-		add_action('admin_head', array(&$this, 'widgets_admin_page'), 100);
+		add_action('admin_head', array(&$this, 'widgets_admin_page'), 100);		
+		
+		add_action( 'admin_menu', array(&$this,  'register_menu_page' ),11);
 		
 		
+		
+		/* Veuse Slider */
+		require $this->pluginPATH . 'includes/veuse-slider.php';	
+		
+		/* Pricetable */
+		require $this->pluginPATH . 'includes/veuse-pricetable.php';		
 		
 		/* Include widgets */
 		require 'shortcodes.php';
 		
 		/* Include widgets */
 		
-		require 'widgets/page-widget.php';
-		require 'widgets/image-widget-2.php';
-		//require 'widgets/parallax-widget.php'; // Beta
-		require 'widgets/download-widget.php';
-		require 'widgets/divider-widget.php';		
-		require 'widgets/callout-widget.php';
-		require 'widgets/toggle-widget.php';
-		require 'widgets/tab-widget.php';
-		require 'widgets/verticaltab-widget.php';
-		require 'widgets/alert-widget.php';
-		require 'widgets/button-widget.php';
-		require 'widgets/iconbox-widget.php';
-		require 'widgets/testimonial-widget.php';
-		require 'widgets/postslider-widget.php';
-		require 'widgets/posts-widget.php';
-		require 'widgets/posts-grid-widget.php';
-		require 'widgets/progressbar-widget.php';
+		require 'views/back/widgets/page-widget.php';
+		require 'views/back/widgets/image-widget-2.php';
+		require 'views/back/widgets/download-widget.php';
+		require 'views/back/widgets/divider-widget.php';		
+		require 'views/back/widgets/callout-widget.php';
+		require 'views/back/widgets/toggle-widget.php';
+		require 'views/back/widgets/tab-widget.php';
+		require 'views/back/widgets/verticaltab-widget.php';
+		require 'views/back/widgets/alert-widget.php';
+		require 'views/back/widgets/button-widget.php';
+		require 'views/back/widgets/iconbox-widget.php';
+		require 'views/back/widgets/testimonial-widget.php';
+		require 'views/back/widgets/postslider-widget.php';
+		require 'views/back/widgets/posts-widget.php';
+		require 'views/back/widgets/posts-grid-widget.php';
+		require 'views/back/widgets/progressbar-widget.php';
+		require 'views/back/widgets/slider-widget.php';
 		
 		/* Add theme support */
-		add_post_type_support('page', 'excerpt');
-				
+		add_post_type_support('page', 'excerpt'); // Enable excerpts on pages
+		
+		require_once $this->pluginPATH . 'views/back/meta-panels/slider-meta.php';
+		require_once $this->pluginPATH . 'views/back/meta-panels/priceitem-meta.php';
+		
+	
+	}
+	
+	
+	
+
+	function register_menu_page(){
+	     
+	     add_menu_page( 'Veuse Uikit Settings', 'Veuse Uikit', 'edit_posts', 'veuse-uikit', array(&$this, 'add_settings_page'), 'dashicons-desktop' , '99' );
+	     add_submenu_page( 'veuse-uikit' , 'Slideshows', 'Slideshows', 'edit_posts', 'edit.php?post_type=veuse_slider', '');
+		 //add_submenu_page( 'veuse-uikit' , 'Pricetables', 'Pricetables', 'edit_posts', 'edit-tags.php?taxonomy=pricetable', '');
+	     add_submenu_page( 'veuse-uikit' , 'Pricetable', 'Pricetable', 'edit_posts', 'edit.php?post_type=priceitem', '');  
+	     add_submenu_page( 'veuse-uikit' , 'Documentation', 'Documentation', 'edit_posts', 'veuse-uikit-documentation', array(&$this, 'add_documentation_page'));
+	     
+	      //add_submenu_page( $parent_slug, $page_title, $menu_title, $capability, $menu_slug, $function );
+	}
+	
+	function get_documentation_tabs(){
+	
+		 $tabs = array( 
+	    	
+	    	'intro' 		=> __('Intro','veuse-uikit'), 
+	    	'slideshow' 	=> __('Slideshows','veuse-uikit'), 
+	    	'pricetable'	=> __('Pricetables','veuse-uikit'),
+	    	'shortcodes'	=> __('Shortcodes','veuse-uikit'),
+	    	
+	    	);
+	    	
+	    return $tabs;
+	}
+	
+	function veuse_uikit_documentation_tabs( $current = 'intro' ) {
+
+	    $tabs = $this->get_documentation_tabs();  
+	     
+	    echo '<h3 class="nav-tab-wrapper" style="padding-left:0; border-bottom:0;">';
+	    foreach( $tabs as $tab => $name ){
+	        $class = ( $tab == $current ) ? ' nav-tab-active' : '';
+	        echo "<a class='nav-tab$class' style='padding-top:6px; margin:0px -1px -1px 0; border:1px solid #ccc;' href='?page=veuse-uikit-documentation&tab=$tab'>$name</a>";
+	
+	    }
+	    echo '</h3>';
+	}
+	
+	function add_settings_page(){
+		?>
+		<div class="wrap">
+
+		<div class="icon32" id="icon-options-general"><br></div>
+		<h2> <?php _e('Info','veuse-portfoliodocumentation');?></h2>
+		<p><?php
+			
+			echo __( 'Here you find instructions on how to use the %s plugin. For more in-depth info, please check out http://veuse.com/support.');?>
+		</p>
+		</div>
+		
+		
+		<?php
+	}
+	
+	
+	
+	function add_documentation_page(){
+		
+		include_once $this->pluginPATH . 'documentation/documentation.php';
 	}
 	
 	
@@ -84,23 +160,45 @@ class VeuseUikit {
 	
 		wp_enqueue_script('veuse_uikit_js', $this->pluginURI  . 'assets/js/veuse-uikit.js', array('jquery'), '', false);
 		
+		wp_enqueue_script('owl', $this->pluginURI . 'assets/js/owl.carousel.min.js', array('jquery'), '', true);
 		wp_enqueue_script('flexslider', $this->pluginURI . 'assets/js/jquery.flexslider-min.js', array('jquery'), '', true);
 		
-		//wp_enqueue_script('easypiechart', $this->pluginURI . 'assets/js/jquery.easypiechart.js', array('jquery'), '', true);
+		
 
 	}
 	
 	/* Enqueue scripts */
 	
 	function veuse_uikit_enqueue_admin_script() {
+	
+		wp_enqueue_script( 'jquery-ui-sortable' );
+	
+		/* CSS */
+		wp_register_style( 'slideshow-builder',  $this->pluginURI . 'assets/css/slideshow-builder.css', array(), '', 'screen' );
+	    wp_enqueue_style ( 'slideshow-builder' );
+	    
+	    
+	    wp_register_style( 'wp-editor-widget-css',  $this->pluginURI . 'assets/css/parallax-widget.css', array(), '', 'screen' );
+		wp_enqueue_style ( 'wp-editor-widget-css' );
+		
+		/* Javascript */
+		if(function_exists( 'wp_enqueue_media' )){
+			wp_enqueue_media();
+		}
+				
+        wp_enqueue_script('media-upload');
 		
 		wp_enqueue_script('veuse_uikit-admin-js', $this->pluginURI  . 'assets/js/veuse-uikit-admin.js', array('jquery'), '', true);
 		
-		wp_register_script('wp-editor-widget-js', $this->pluginURI  . 'assets/js/parallax-widget.js', array('jquery'), '', true);
-		wp_enqueue_script('wp-editor-widget-js');
 		
-		wp_register_style( 'wp-editor-widget-css',  $this->pluginURI . 'assets/css/parallax-widget.css', array(), '', 'screen' );
-		wp_enqueue_style ( 'wp-editor-widget-css' );
+		//wp_register_script('wp-editor-widget-js', $this->pluginURI  . 'assets/js/parallax-widget.js', array('jquery'), '', true);
+		//wp_enqueue_script('wp-editor-widget-js');
+		
+		
+		
+		
+        
+        
 	}
 	
 	/* Localization
@@ -108,6 +206,8 @@ class VeuseUikit {
 	
 	function veuse_uikit_load_textdomain() {
 	    load_plugin_textdomain('veuse-uikit', false, dirname(plugin_basename(__FILE__)) . '/languages');
+	    
+	    
 	}
 	
 	
@@ -161,7 +261,7 @@ function veuse_uikit_locate_part($file) {
 	   	$filepath = get_stylesheet_directory().'/'. $file .'.php';
 	
 	else
-		$filepath = 'views/front/'.$file.'.php';
+		$filepath = plugin_dir_path(__FILE__).'views/front/'.$file.'.php';
 	
 	return $filepath;
 }
